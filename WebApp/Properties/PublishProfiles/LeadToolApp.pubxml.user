@@ -1,0 +1,1281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\Applications\LeadtoolsApp\V1.0\Deployment\Publish\V4_23JAN2017</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Apps/Annotations/AnnotationsDemoJS.jpg">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnCustomObject/AnnTriangleDrawDesigner.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnCustomObject/AnnTriangleDrawDesigner.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnCustomObject/AnnTriangleEditDesigner.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnCustomObject/AnnTriangleEditDesigner.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnCustomObject/AnnTriangleObject.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnCustomObject/AnnTriangleObject.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnCustomObject/AnnTriangleRenderer.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnCustomObject/AnnTriangleRenderer.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnOmrObject/AnnOmrObject.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnOmrObject/AnnOmrObject.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnotationLoadSaveHelper.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnotationLoadSaveHelper.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnotationsDemo.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnotationsDemo.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnRichTextObject/AnnRichTextDrawDesigner.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnRichTextObject/AnnRichTextDrawDesigner.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnRichTextObject/AnnRichTextEditDesigner.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnRichTextObject/AnnRichTextEditDesigner.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnRichTextObject/AnnRichTextObject.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnRichTextObject/AnnRichTextObject.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnRichTextObject/AnnRichTextRenderer.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnRichTextObject/AnnRichTextRenderer.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnRichTextObject/jquery-te-1.4.0.css">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnRichTextObject/jquery-te-1.4.0.js">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnRichTextObject/jquery-te.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnTextObject/AnnTextObject.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/AnnTextObject/AnnTextObject.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/CustomFieldInfo.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/App/CustomFieldInfo.js.map">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Annotations/index.html">
+      <publishTime>12/21/2016 10:17:26</publishTime>
+    </File>
+    <File Include="Apps/Annotations/readme.html">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Images/eye.gif">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Images/Leadtools.pdf">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Images/Ocr1-4.tif">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Images/ocr1.jpg">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Images/PngImage.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/Audio.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/EncryptPrimary.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/EncryptSecondary.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/Hotspot.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/Lock.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/Note.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/Point.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Approved.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Assigned.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Checked.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Client.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Copy.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Draft.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Extended.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Fax.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Faxed.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Important.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Invoice.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Notice.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Official.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/OnFile.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Paid.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Passed.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Pending.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Processed.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Received.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Rejected.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Release.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Sent.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Shipped.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/TopSecret.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Urgent.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/RubberStamps/Void.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/StickyNote.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Objects/Video.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Styles/AnnotationsDemoStyle.css">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Annotations/Resources/Styles/ThumbnailsDemo.css">
+      <publishTime>01/10/2017 13:47:40</publishTime>
+    </File>
+    <File Include="Apps/Common/Common.js">
+      <publishTime>01/23/2017 15:39:03</publishTime>
+    </File>
+    <File Include="Apps/Common/Dialogs/AboutDlg.js">
+      <publishTime>01/23/2017 15:39:03</publishTime>
+    </File>
+    <File Include="Apps/Common/Dialogs/LoadingDlg.js">
+      <publishTime>01/23/2017 15:39:03</publishTime>
+    </File>
+    <File Include="Apps/Common/Dialogs/OpenFileDlg.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Common/Dialogs/TextResultDlg.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.Annotations.Automation.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.Annotations.Core.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.Annotations.Designers.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.Annotations.Documents.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.Annotations.JavaScript.js">
+      <publishTime>12/28/2016 12:37:09</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.Annotations.Rendering.JavaScript.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.Annotations.UserMedicalPack.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.Controls.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.Controls.Medical.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.ImageProcessing.Color.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.ImageProcessing.Core.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.ImageProcessing.Effects.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.ImageProcessing.Main.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/Leadtools.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Libs/spectrum/spectrum.js">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="Apps/Common/Utils.js">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/SelectRectangle.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolAudio.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolButton.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolClosedCurve.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolCrossProduct.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolCurve.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolEllipse.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolEncrypt.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolFreehand.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolFreehandHotspot.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolHilite.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolHotspot.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolLine.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolNote.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolPoint.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolPointer.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolPolygon.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolPolyline.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolPolyruler.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolProtractor.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolRectangle.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolRedaction.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolRtf.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolRubberStamp.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolRuler.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolSelect.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolStamp.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolText.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolTextPointer.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolTextRollup.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Draw/ToolVideo.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Edit/Anchor.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Edit/ControlPoint.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Edit/Rotate.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Edit/SelectedObject.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Cursors/Edit/SelectObject.cur">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/development.html">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/favicon.ico">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/90degreeRuler.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/a.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/aArrow.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ActualSize.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Annotations.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ApplyDecryptor.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ApplyEncryptor.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/AutoGetText.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/AutoPanMode.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Barcode.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Bookmarks.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/bottom-align.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/bSpline.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/burn.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/center-align.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/circle.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ClearSelection.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Clockwise-Small.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Clockwise.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Close.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/cobbAngle.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Collapse.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/CollapseLeft.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/CollapseRight.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/CopyText.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/CounterClockwise-Small.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/CounterClockwise.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/DeselectOnDown-Mouse.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/DeselectOnDown-Touch.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Document.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/documentAnnotations.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/DoubleLayout.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/EnableToolTip.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Expand.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Find-XSmall.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/FindText.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/FirstPage-Small.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/FirstPage.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Fit.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/FitPage.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/FitWidth.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Flip.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/fourLines.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Group.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/h.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/hand.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Help.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/highlight.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/HorizontalLayout.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/hSquiggles.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/image.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/InertiaScroll.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Interpolation.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/intersect.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/LastPage-Small.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/LastPage.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/left-align.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/line.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/loadbates.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/lock.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/MagnifyGlassMode.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/make-same-height.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/make-same-size.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/make-same-width.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/medicalAnnotation.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/middle-align.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/midline.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/MultiPagesExportText.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/NextPage-Small.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/NextPage-xSmall.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/NextPage.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/norberg.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/note.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/OMR.png">
+      <publishTime>12/30/2016 18:01:18</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Open.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/openAnnotation.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/OpenUrl.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/PanMode.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/PanZoomMode.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/parallelLines.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/pen.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/pin.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/pointer.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/polygon.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/polyline.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/PreviousPage-Small.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/PreviousPage-xSmall.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/PreviousPage.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Properties.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/protractor.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/realizeRedact.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/rectangle.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/redact.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Redo.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Reload-Small.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/RenderAnnOnThumbnails.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/RenderMode.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/RenderModeSettings.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ResetRotatePoint.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/restoreRedact.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Reverse.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/RichText.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/right-align.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/RotateThumb.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/roundX.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ruler.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Run.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Save.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/saveXML.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/sCurve.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/SelectAllAnnotations.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/SelectAllText.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/SelectAreaMode.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/SelectTextMode.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Settings.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/showhide.png">
+      <publishTime>12/30/2016 18:01:18</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ShowLinks.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ShowTextIndicators.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/SinglePageExportText.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/snap.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/solid.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/sound.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/stamp.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/stickyNotes.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/strikethrough.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/tableicon.png">
+      <publishTime>12/30/2016 18:01:18</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Text-field1.png">
+      <publishTime>12/30/2016 18:01:18</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Text-field2.png">
+      <publishTime>12/30/2016 18:01:18</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/tHighlight.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Thumbnails.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ToBack.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ToFirst.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ToFront.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ToLast.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/top-align.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/tRedact.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/triangle.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/underline.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Undo.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/Ungroup.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/unlock.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/unstructure.png">
+      <publishTime>12/30/2016 18:01:18</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/UserName.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/VerticalLayout.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/video.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ViewAsImage.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ViewAsSvg.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/WordDoc.png">
+      <publishTime>12/30/2016 18:01:18</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ZoomIn-Small.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ZoomIn.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ZoomMode.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ZoomOut-Small.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ZoomOut.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/Icons/ZoomToMode.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/LEAD.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/LeadtoolsHeader.png">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/loading.GIF">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/LoadingBar-Small.gif">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Images/LoadingBar.GIF">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/NoHTML5Support.html">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Styles/AutomationObjectsList.css">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Styles/dialogs.css">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Styles/Icons.css">
+      <publishTime>12/30/2016 18:01:18</publishTime>
+    </File>
+    <File Include="Apps/Resources/Styles/LEADServiceStyles.css">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Styles/Sidebar.css">
+      <publishTime>01/10/2017 13:47:40</publishTime>
+    </File>
+    <File Include="Apps/Resources/Styles/Site.css">
+      <publishTime>01/23/2017 15:02:32</publishTime>
+    </File>
+    <File Include="Apps/Resources/Styles/spectrum/spectrum.css">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Styles/Table.css">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Apps/Resources/Styles/Toolbar.css">
+      <publishTime>01/23/2017 14:24:55</publishTime>
+    </File>
+    <File Include="Apps/serviceConfig.json">
+      <publishTime>01/20/2017 18:51:06</publishTime>
+    </File>
+    <File Include="App_Data/MasterFormDB.sdf">
+      <publishTime>12/23/2016 18:39:53</publishTime>
+    </File>
+    <File Include="App_Data/XmlDocument.xml">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="bin/DocumentFormat.OpenXml.dll">
+      <publishTime>02/22/2010 16:33:08</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Annotations.Core.dll">
+      <publishTime>04/14/2016 22:07:18</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Annotations.dll">
+      <publishTime>03/13/2016 14:28:46</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Barcode.DatamatrixRead.dll">
+      <publishTime>03/13/2016 19:11:08</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Barcode.dll">
+      <publishTime>04/09/2016 21:21:08</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Barcode.Lead2DRead.dll">
+      <publishTime>04/05/2016 13:03:46</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Barcode.OneD.dll">
+      <publishTime>04/09/2016 21:28:12</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Barcode.PdfRead.dll">
+      <publishTime>03/13/2016 19:15:26</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Barcode.QrRead.dll">
+      <publishTime>03/13/2016 19:19:02</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.Bmp.dll">
+      <publishTime>03/13/2016 17:27:42</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.Cmp.dll">
+      <publishTime>03/29/2016 20:40:42</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.Cmw.dll">
+      <publishTime>04/01/2016 16:12:48</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.dll">
+      <publishTime>04/06/2016 02:45:58</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.Fax.dll">
+      <publishTime>03/13/2016 14:45:20</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.Gif.dll">
+      <publishTime>03/13/2016 18:08:24</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.J2k.dll">
+      <publishTime>03/20/2016 11:26:08</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.Jb2.dll">
+      <publishTime>03/13/2016 18:20:36</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.Jbg.dll">
+      <publishTime>03/13/2016 18:22:00</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.Png.dll">
+      <publishTime>03/20/2016 11:14:36</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.Raw.dll">
+      <publishTime>03/13/2016 18:57:24</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.Tif.dll">
+      <publishTime>04/15/2016 18:51:44</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Codecs.Wmf.dll">
+      <publishTime>03/13/2016 19:17:30</publishTime>
+    </File>
+    <File Include="bin/Leadtools.ColorConversion.dll">
+      <publishTime>03/13/2016 15:33:40</publishTime>
+    </File>
+    <File Include="bin/Leadtools.dll">
+      <publishTime>04/17/2016 22:59:12</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Drawing.dll">
+      <publishTime>04/19/2016 23:02:34</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Forms.Auto.dll">
+      <publishTime>03/13/2016 18:27:24</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Forms.Commands.dll">
+      <publishTime>04/05/2016 18:01:12</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Forms.dll">
+      <publishTime>03/13/2016 17:42:12</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Forms.DocumentWriters.dll">
+      <publishTime>04/19/2016 22:35:06</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Forms.Ocr.Advantage.dll">
+      <publishTime>04/21/2016 10:16:40</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Forms.Ocr.dll">
+      <publishTime>03/13/2016 17:42:44</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Forms.Processing.dll">
+      <publishTime>04/05/2016 18:02:42</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Forms.Recognition.Barcode.dll">
+      <publishTime>03/13/2016 18:26:08</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Forms.Recognition.dll">
+      <publishTime>03/13/2016 18:25:30</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Forms.Recognition.Ocr.dll">
+      <publishTime>03/13/2016 18:26:48</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Forms.SpellCheckers.Hunspell.dll">
+      <publishTime>03/13/2016 18:01:06</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Forms.SpellCheckers.OS.dll">
+      <publishTime>03/13/2016 18:02:08</publishTime>
+    </File>
+    <File Include="bin/Leadtools.ImageProcessing.Color.dll">
+      <publishTime>03/13/2016 15:25:02</publishTime>
+    </File>
+    <File Include="bin/Leadtools.ImageProcessing.Core.dll">
+      <publishTime>04/21/2016 09:54:06</publishTime>
+    </File>
+    <File Include="bin/Leadtools.ImageProcessing.Effects.dll">
+      <publishTime>03/13/2016 15:27:40</publishTime>
+    </File>
+    <File Include="bin/Leadtools.ImageProcessing.SpecialEffects.dll">
+      <publishTime>03/13/2016 15:31:22</publishTime>
+    </File>
+    <File Include="bin/Leadtools.ImageProcessing.Utilities.dll">
+      <publishTime>03/13/2016 15:12:56</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Kernel.Annotations.dll">
+      <publishTime>03/13/2016 14:27:34</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Pdf.dll">
+      <publishTime>04/13/2016 00:18:02</publishTime>
+    </File>
+    <File Include="bin/Leadtools.PdfEngine.dll">
+      <publishTime>03/31/2016 01:14:34</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Svg.dll">
+      <publishTime>04/21/2016 09:42:38</publishTime>
+    </File>
+    <File Include="bin/Leadtools.Vector.dll">
+      <publishTime>03/13/2016 14:59:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll">
+      <publishTime>07/07/2015 00:51:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="bin/System.Data.SQLite.dll">
+      <publishTime>12/22/2016 19:52:32</publishTime>
+    </File>
+    <File Include="bin/System.Data.SQLite.EF6.dll">
+      <publishTime>12/22/2016 19:52:32</publishTime>
+    </File>
+    <File Include="bin/System.Data.SQLite.Linq.dll">
+      <publishTime>12/22/2016 19:52:32</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>12/20/2016 16:17:31</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="bin/WebApp.dll">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="bin/x64/SQLite.Interop.dll">
+      <publishTime>12/22/2016 19:52:32</publishTime>
+    </File>
+    <File Include="bin/x86/SQLite.Interop.dll">
+      <publishTime>12/22/2016 19:52:32</publishTime>
+    </File>
+    <File Include="bin/XmlDocument.xml">
+      <publishTime>01/23/2017 15:39:04</publishTime>
+    </File>
+    <File Include="CodeAnalysis/DotNet.ruleset">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="Content/barBot.png">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/bootstrap-select.min.css">
+      <publishTime>12/22/2016 11:44:05</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>12/23/2016 18:44:05</publishTime>
+    </File>
+    <File Include="Content/Icon/Back.gif">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/Icon/background forms.png">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/Icon/barBot.png">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/Icon/Clear.png">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/Icon/Document.png">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/Icon/Edit.gif">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/Icon/IE_FamDef.png">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/Icon/newitem.gif">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/Icon/REJECT2 %281%29.GIF">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/Icon/REJECT2 %282%29.GIF">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/Icon/REJECT2.GIF">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/Icon/save.gif">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/images.jpg">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/REJECT2.GIF">
+      <publishTime>01/20/2017 15:11:25</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>01/23/2017 14:46:37</publishTime>
+    </File>
+    <File Include="ExtraAssemblies.targets">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>01/20/2017 18:18:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>01/20/2017 18:18:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>01/20/2017 18:18:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>01/20/2017 18:18:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>01/20/2017 18:18:20</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>12/20/2016 16:11:37</publishTime>
+    </File>
+    <File Include="License/LeadtoolsLicense.txt">
+      <publishTime>01/20/2017 18:51:06</publishTime>
+    </File>
+    <File Include="MasterForm/Annotation/temp.txt">
+      <publishTime>01/20/2017 12:43:58</publishTime>
+    </File>
+    <File Include="MasterForm/temp/temp.txt">
+      <publishTime>01/20/2017 12:43:58</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/26/2016 13:24:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-select.min.js">
+      <publishTime>12/22/2016 11:44:05</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>01/10/2017 14:30:35</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>12/22/2016 11:44:05</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>12/22/2016 11:44:05</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>12/22/2016 11:51:14</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.11.1.js">
+      <publishTime>01/10/2017 14:30:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>12/22/2016 11:44:05</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>12/22/2016 11:44:05</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>12/22/2016 11:44:05</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>12/22/2016 11:44:05</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>12/22/2016 11:44:05</publishTime>
+    </File>
+    <File Include="Scripts/notify.js">
+      <publishTime>01/03/2017 13:02:05</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>12/22/2016 11:44:05</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>12/22/2016 11:44:05</publishTime>
+    </File>
+    <File Include="Scripts/Splitter.js">
+      <publishTime>01/03/2017 18:59:59</publishTime>
+    </File>
+    <File Include="Views/MasterForm/Editor.cshtml">
+      <publishTime>01/23/2017 14:46:37</publishTime>
+    </File>
+    <File Include="Views/MasterForm/Index.cshtml">
+      <publishTime>01/20/2017 15:23:39</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>12/22/2016 11:44:05</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/23/2017 15:39:05</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

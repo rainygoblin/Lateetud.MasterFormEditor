@@ -1,0 +1,914 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug19</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{529EBA69-8F88-4C96-B6FA-C3C1C4EC427E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApp</RootNamespace>
+    <AssemblyName>WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <!-- v19 - Debug - AnyCPU -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <LeadConfigPath>C:\LEADTOOLS 20\Bin\DotNet4\Win32\</LeadConfigPath>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>TRACE;DEBUG;FOR_ANYCPU,LTV20_CONFIG,LEADTOOLS_V16_OR_LATER,LEADTOOLS_V17_OR_LATER;LEADTOOLS_V175_OR_LATER;FOR_DOTNET4;LEADTOOLS_V18_OR_LATER;LEADTOOLS_V20_OR_LATER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data/XmlDocument.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <CodeAnalysisRuleSet>CodeAnalysis\DotNet.ruleset</CodeAnalysisRuleSet>
+    <PublishDatabases>false</PublishDatabases>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <!-- v19 - Release - AnyCPU -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <LeadConfigPath>C:\LEADTOOLS 20\Bin\DotNet4\Win32\</LeadConfigPath>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>TRACE;FOR_ANYCPU,LTV20_CONFIG,LEADTOOLS_V16_OR_LATER,LEADTOOLS_V17_OR_LATER;LEADTOOLS_V175_OR_LATER;FOR_DOTNET4;LEADTOOLS_V18_OR_LATER;LEADTOOLS_V20_OR_LATER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data/XmlDocument.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <!-- v19 - Debug - x86 -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <LeadConfigPath>C:\LEADTOOLS 20\Bin\DotNet4\Win32\</LeadConfigPath>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>TRACE;DEBUG;FOR_ANYCPU,LTV20_CONFIG,LEADTOOLS_V16_OR_LATER,LEADTOOLS_V17_OR_LATER;LEADTOOLS_V175_OR_LATER;FOR_DOTNET4;LEADTOOLS_V18_OR_LATER;LEADTOOLS_V20_OR_LATER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data/XmlDocument.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <CodeAnalysisRuleSet>CodeAnalysis\DotNet.ruleset</CodeAnalysisRuleSet>
+    <PublishDatabases>false</PublishDatabases>
+  </PropertyGroup>
+  <!-- v19 - Release - x86 -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <LeadConfigPath>C:\LEADTOOLS 20\Bin\DotNet4\Win32\</LeadConfigPath>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>TRACE;FOR_ANYCPU,LTV20_CONFIG,LEADTOOLS_V16_OR_LATER,LEADTOOLS_V17_OR_LATER;LEADTOOLS_V175_OR_LATER;FOR_DOTNET4;LEADTOOLS_V18_OR_LATER;LEADTOOLS_V20_OR_LATER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data/XmlDocument.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <!-- v19 - Debug - x64 -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <LeadConfigPath>C:\LEADTOOLS 20\Bin\DotNet4\x64\</LeadConfigPath>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>TRACE;DEBUG;FOR_ANYCPU,LTV20_CONFIG,LEADTOOLS_V16_OR_LATER,LEADTOOLS_V17_OR_LATER;LEADTOOLS_V175_OR_LATER;FOR_DOTNET4;LEADTOOLS_V18_OR_LATER;LEADTOOLS_V20_OR_LATER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data/XmlDocument.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <CodeAnalysisRuleSet>CodeAnalysis\DotNet.ruleset</CodeAnalysisRuleSet>
+    <PublishDatabases>false</PublishDatabases>
+  </PropertyGroup>
+  <!-- v19 - Release - x64 -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <LeadConfigPath>C:\LEADTOOLS 20\Bin\DotNet4\x64\</LeadConfigPath>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>TRACE;FOR_ANYCPU,LTV20_CONFIG,LEADTOOLS_V16_OR_LATER,LEADTOOLS_V17_OR_LATER;LEADTOOLS_V175_OR_LATER;FOR_DOTNET4;LEADTOOLS_V18_OR_LATER;LEADTOOLS_V20_OR_LATER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data/XmlDocument.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <!-- Copy the assemblies not referenced directly by the project into the output directory -->
+  <Import Project=".\ExtraAssemblies.targets" />
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Leadtools, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Annotations, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Annotations.Automation, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Annotations.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Annotations.Designers, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Annotations.Designers.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Annotations.Engine, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Annotations.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode.DatamatrixRead, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Barcode.DatamatrixRead.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode.DatamatrixWrite, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Barcode.DatamatrixWrite.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode.Lead2DRead, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Barcode.Lead2DRead.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode.PdfRead, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Barcode.PdfRead.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode.QrRead, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Barcode.QrRead.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Codecs.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Cmp, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Codecs.Cmp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Tif, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Codecs.Tif.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Document, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Document.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Document.Converter, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Document.Converter.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Document.Pdf, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Document.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Document.Raster, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Document.Raster.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Document.Writer, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Document.Writer.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Drawing, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Drawing.D2D, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Drawing.D2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Drawing.MP, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Drawing.MP.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Auto, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Forms.Auto.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Commands, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Forms.Commands.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Common, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Forms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Ocr.Advantage, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Forms.Ocr.Advantage.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Processing, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Forms.Processing.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Recognition, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Forms.Recognition.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Recognition.Ocr, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\x64\Leadtools.Forms.Recognition.Ocr.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.SpellCheckers.Hunspell, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Forms.SpellCheckers.Hunspell.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.SpellCheckers.OS, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Forms.SpellCheckers.OS.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageOptimization, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.ImageOptimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageProcessing.Core, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.ImageProcessing.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Ocr, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Ocr.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Ocr.LEADEngine, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Ocr.LEADEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Pdf, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Pdf.Annotations, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Pdf.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Vector, Version=20.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LEADTOOLS 20\Bin\Dotnet4\Win32\Leadtools.Vector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.104.0\lib\net45\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.104.0\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.104.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CodeAnalysis\CustomDictionary.xml" />
+    <Content Include="..\Common\Common.js">
+      <Link>Apps\Common\Common.js</Link>
+    </Content>
+    <Content Include="..\Common\Dialogs\AboutDlg.js">
+      <Link>Apps\Common\Dialogs\AboutDlg.js</Link>
+    </Content>
+    <Content Include="..\Common\Dialogs\LoadingDlg.js">
+      <Link>Apps\Common\Dialogs\LoadingDlg.js</Link>
+    </Content>
+    <Content Include="..\Common\Dialogs\OpenFileDlg.js">
+      <Link>Apps\Common\Dialogs\OpenFileDlg.js</Link>
+    </Content>
+    <Content Include="..\Common\Dialogs\TextResultDlg.js">
+      <Link>Apps\Common\Dialogs\TextResultDlg.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.Annotations.Automation.js">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.Automation.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.Annotations.Core.js">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.Core.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.Annotations.Designers.js">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.Designers.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.Annotations.Documents.js">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.Documents.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.Annotations.JavaScript.js">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.JavaScript.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.Annotations.Rendering.JavaScript.js">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.Rendering.JavaScript.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.Annotations.UserMedicalPack.js">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.UserMedicalPack.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.Controls.js">
+      <Link>Apps\Common\Libs\Leadtools.Controls.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.Controls.Medical.js">
+      <Link>Apps\Common\Libs\Leadtools.Controls.Medical.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.ImageProcessing.Color.js">
+      <Link>Apps\Common\Libs\Leadtools.ImageProcessing.Color.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.ImageProcessing.Core.js">
+      <Link>Apps\Common\Libs\Leadtools.ImageProcessing.Core.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.ImageProcessing.Effects.js">
+      <Link>Apps\Common\Libs\Leadtools.ImageProcessing.Effects.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.ImageProcessing.Main.js">
+      <Link>Apps\Common\Libs\Leadtools.ImageProcessing.Main.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\Leadtools.js">
+      <Link>Apps\Common\Libs\Leadtools.js</Link>
+    </Content>
+    <Content Include="..\Common\Libs\spectrum\spectrum.js">
+      <Link>Apps\Common\Libs\spectrum\spectrum.js</Link>
+    </Content>
+    <Content Include="..\Common\Utils.js">
+      <Link>Apps\Common\Utils.js</Link>
+    </Content>
+    <Content Include="Apps\Annotations\App\AnnOmrObject\AnnOmrObject.js" />
+    <Content Include="Apps\Annotations\App\AnnTextObject\AnnTextObject.js" />
+    <Content Include="Apps\Annotations\App\CustomFieldInfo.js" />
+    <Content Include="Apps\Annotations\Resources\Images\eye.gif" />
+    <Content Include="Apps\Annotations\Resources\Images\Ocr1-4.tif" />
+    <Content Include="Apps\Annotations\Resources\Objects\Audio.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\EncryptPrimary.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\EncryptSecondary.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\Hotspot.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\Lock.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\Note.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\Point.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Approved.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Assigned.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Checked.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Client.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Copy.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Draft.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Extended.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Fax.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Faxed.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Important.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Invoice.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Notice.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Official.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\OnFile.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Paid.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Passed.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Pending.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Processed.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Received.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Rejected.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Release.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Sent.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Shipped.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\TopSecret.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Urgent.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\RubberStamps\Void.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\StickyNote.png" />
+    <Content Include="Apps\Annotations\Resources\Objects\Video.png" />
+    <Content Include="Apps\Annotations\Resources\Styles\ThumbnailsDemo.css" />
+    <Content Include="Apps\Resources\Cursors\Draw\SelectRectangle.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolAudio.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolButton.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolClosedCurve.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolCrossProduct.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolCurve.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolEllipse.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolEncrypt.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolFreehand.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolFreehandHotspot.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolHilite.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolHotspot.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolLine.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolNote.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolPoint.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolPointer.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolPolygon.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolPolyline.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolPolyruler.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolProtractor.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolRectangle.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolRedaction.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolRtf.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolRubberStamp.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolRuler.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolSelect.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolStamp.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolText.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolTextPointer.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolTextRollup.cur" />
+    <Content Include="Apps\Resources\Cursors\Draw\ToolVideo.cur" />
+    <Content Include="Apps\Resources\Cursors\Edit\Anchor.cur" />
+    <Content Include="Apps\Resources\Cursors\Edit\ControlPoint.cur" />
+    <Content Include="Apps\Resources\Cursors\Edit\Rotate.cur" />
+    <Content Include="Apps\Resources\Cursors\Edit\SelectedObject.cur" />
+    <Content Include="Apps\Resources\Cursors\Edit\SelectObject.cur" />
+    <Content Include="Apps\Resources\development.html" />
+    <Content Include="Apps\Resources\Images\favicon.ico" />
+    <Content Include="Apps\Resources\Images\Icons\90degreeRuler.png" />
+    <Content Include="Apps\Resources\Images\Icons\a.png" />
+    <Content Include="Apps\Resources\Images\Icons\aArrow.png" />
+    <Content Include="Apps\Resources\Images\Icons\ActualSize.png" />
+    <Content Include="Apps\Resources\Images\Icons\Annotations.png" />
+    <Content Include="Apps\Resources\Images\Icons\ApplyDecryptor.png" />
+    <Content Include="Apps\Resources\Images\Icons\ApplyEncryptor.png" />
+    <Content Include="Apps\Resources\Images\Icons\AutoGetText.png" />
+    <Content Include="Apps\Resources\Images\Icons\AutoPanMode.png" />
+    <Content Include="Apps\Resources\Images\Icons\Barcode.png" />
+    <Content Include="Apps\Resources\Images\Icons\Bookmarks.png" />
+    <Content Include="Apps\Resources\Images\Icons\bottom-align.png" />
+    <Content Include="Apps\Resources\Images\Icons\bSpline.png" />
+    <Content Include="Apps\Resources\Images\Icons\burn.png" />
+    <Content Include="Apps\Resources\Images\Icons\center-align.png" />
+    <Content Include="Apps\Resources\Images\Icons\circle.png" />
+    <Content Include="Apps\Resources\Images\Icons\ClearSelection.png" />
+    <Content Include="Apps\Resources\Images\Icons\Clockwise-Small.png" />
+    <Content Include="Apps\Resources\Images\Icons\Clockwise.png" />
+    <Content Include="Apps\Resources\Images\Icons\Close.png" />
+    <Content Include="Apps\Resources\Images\Icons\cobbAngle.png" />
+    <Content Include="Apps\Resources\Images\Icons\Collapse.png" />
+    <Content Include="Apps\Resources\Images\Icons\CollapseLeft.png" />
+    <Content Include="Apps\Resources\Images\Icons\CollapseRight.png" />
+    <Content Include="Apps\Resources\Images\Icons\CopyText.png" />
+    <Content Include="Apps\Resources\Images\Icons\CounterClockwise-Small.png" />
+    <Content Include="Apps\Resources\Images\Icons\CounterClockwise.png" />
+    <Content Include="Apps\Resources\Images\Icons\DeselectOnDown-Mouse.png" />
+    <Content Include="Apps\Resources\Images\Icons\DeselectOnDown-Touch.png" />
+    <Content Include="Apps\Resources\Images\Icons\Document.png" />
+    <Content Include="Apps\Resources\Images\Icons\documentAnnotations.png" />
+    <Content Include="Apps\Resources\Images\Icons\DoubleLayout.png" />
+    <Content Include="Apps\Resources\Images\Icons\EnableToolTip.png" />
+    <Content Include="Apps\Resources\Images\Icons\Expand.png" />
+    <Content Include="Apps\Resources\Images\Icons\Find-XSmall.png" />
+    <Content Include="Apps\Resources\Images\Icons\FindText.png" />
+    <Content Include="Apps\Resources\Images\Icons\FirstPage-Small.png" />
+    <Content Include="Apps\Resources\Images\Icons\FirstPage.png" />
+    <Content Include="Apps\Resources\Images\Icons\Fit.png" />
+    <Content Include="Apps\Resources\Images\Icons\FitPage.png" />
+    <Content Include="Apps\Resources\Images\Icons\FitWidth.png" />
+    <Content Include="Apps\Resources\Images\Icons\Flip.png" />
+    <Content Include="Apps\Resources\Images\Icons\fourLines.png" />
+    <Content Include="Apps\Resources\Images\Icons\Group.png" />
+    <Content Include="Apps\Resources\Images\Icons\h.png" />
+    <Content Include="Apps\Resources\Images\Icons\hand.png" />
+    <Content Include="Apps\Resources\Images\Icons\Help.png" />
+    <Content Include="Apps\Resources\Images\Icons\highlight.png" />
+    <Content Include="Apps\Resources\Images\Icons\HorizontalLayout.png" />
+    <Content Include="Apps\Resources\Images\Icons\hSquiggles.png" />
+    <Content Include="Apps\Resources\Images\Icons\image.png" />
+    <Content Include="Apps\Resources\Images\Icons\InertiaScroll.png" />
+    <Content Include="Apps\Resources\Images\Icons\Interpolation.png" />
+    <Content Include="Apps\Resources\Images\Icons\intersect.png" />
+    <Content Include="Apps\Resources\Images\Icons\LastPage-Small.png" />
+    <Content Include="Apps\Resources\Images\Icons\LastPage.png" />
+    <Content Include="Apps\Resources\Images\Icons\left-align.png" />
+    <Content Include="Apps\Resources\Images\Icons\line.png" />
+    <Content Include="Apps\Resources\Images\Icons\loadbates.png" />
+    <Content Include="Apps\Resources\Images\Icons\lock.png" />
+    <Content Include="Apps\Resources\Images\Icons\MagnifyGlassMode.png" />
+    <Content Include="Apps\Resources\Images\Icons\make-same-height.png" />
+    <Content Include="Apps\Resources\Images\Icons\make-same-size.png" />
+    <Content Include="Apps\Resources\Images\Icons\make-same-width.png" />
+    <Content Include="Apps\Resources\Images\Icons\medicalAnnotation.png" />
+    <Content Include="Apps\Resources\Images\Icons\middle-align.png" />
+    <Content Include="Apps\Resources\Images\Icons\midline.png" />
+    <Content Include="Apps\Resources\Images\Icons\MultiPagesExportText.png" />
+    <Content Include="Apps\Resources\Images\Icons\NextPage-Small.png" />
+    <Content Include="Apps\Resources\Images\Icons\NextPage-xSmall.png" />
+    <Content Include="Apps\Resources\Images\Icons\NextPage.png" />
+    <Content Include="Apps\Resources\Images\Icons\norberg.png" />
+    <Content Include="Apps\Resources\Images\Icons\note.png" />
+    <Content Include="Apps\Resources\Images\Icons\OMR.png" />
+    <Content Include="Apps\Resources\Images\Icons\Open.png" />
+    <Content Include="Apps\Resources\Images\Icons\openAnnotation.png" />
+    <Content Include="Apps\Resources\Images\Icons\OpenUrl.png" />
+    <Content Include="Apps\Resources\Images\Icons\PanMode.png" />
+    <Content Include="Apps\Resources\Images\Icons\PanZoomMode.png" />
+    <Content Include="Apps\Resources\Images\Icons\parallelLines.png" />
+    <Content Include="Apps\Resources\Images\Icons\pen.png" />
+    <Content Include="Apps\Resources\Images\Icons\pin.png" />
+    <Content Include="Apps\Resources\Images\Icons\pointer.png" />
+    <Content Include="Apps\Resources\Images\Icons\polygon.png" />
+    <Content Include="Apps\Resources\Images\Icons\polyline.png" />
+    <Content Include="Apps\Resources\Images\Icons\PreviousPage-Small.png" />
+    <Content Include="Apps\Resources\Images\Icons\PreviousPage-xSmall.png" />
+    <Content Include="Apps\Resources\Images\Icons\PreviousPage.png" />
+    <Content Include="Apps\Resources\Images\Icons\Properties.png" />
+    <Content Include="Apps\Resources\Images\Icons\protractor.png" />
+    <Content Include="Apps\Resources\Images\Icons\realizeRedact.png" />
+    <Content Include="Apps\Resources\Images\Icons\rectangle.png" />
+    <Content Include="Apps\Resources\Images\Icons\redact.png" />
+    <Content Include="Apps\Resources\Images\Icons\Redo.png" />
+    <Content Include="Apps\Resources\Images\Icons\Reload-Small.png" />
+    <Content Include="Apps\Resources\Images\Icons\RenderAnnOnThumbnails.png" />
+    <Content Include="Apps\Resources\Images\Icons\RenderMode.png" />
+    <Content Include="Apps\Resources\Images\Icons\RenderModeSettings.png" />
+    <Content Include="Apps\Resources\Images\Icons\ResetRotatePoint.png" />
+    <Content Include="Apps\Resources\Images\Icons\restoreRedact.png" />
+    <Content Include="Apps\Resources\Images\Icons\Reverse.png" />
+    <Content Include="Apps\Resources\Images\Icons\RichText.png" />
+    <Content Include="Apps\Resources\Images\Icons\right-align.png" />
+    <Content Include="Apps\Resources\Images\Icons\RotateThumb.png" />
+    <Content Include="Apps\Resources\Images\Icons\roundX.png" />
+    <Content Include="Apps\Resources\Images\Icons\ruler.png" />
+    <Content Include="Apps\Resources\Images\Icons\Run.png" />
+    <Content Include="Apps\Resources\Images\Icons\Save.png" />
+    <Content Include="Apps\Resources\Images\Icons\saveXML.png" />
+    <Content Include="Apps\Resources\Images\Icons\sCurve.png" />
+    <Content Include="Apps\Resources\Images\Icons\SelectAllAnnotations.png" />
+    <Content Include="Apps\Resources\Images\Icons\SelectAllText.png" />
+    <Content Include="Apps\Resources\Images\Icons\SelectAreaMode.png" />
+    <Content Include="Apps\Resources\Images\Icons\SelectTextMode.png" />
+    <Content Include="Apps\Resources\Images\Icons\Settings.png" />
+    <Content Include="Apps\Resources\Images\Icons\showhide.png" />
+    <Content Include="Apps\Resources\Images\Icons\ShowLinks.png" />
+    <Content Include="Apps\Resources\Images\Icons\ShowTextIndicators.png" />
+    <Content Include="Apps\Resources\Images\Icons\SinglePageExportText.png" />
+    <Content Include="Apps\Resources\Images\Icons\snap.png" />
+    <Content Include="Apps\Resources\Images\Icons\solid.png" />
+    <Content Include="Apps\Resources\Images\Icons\sound.png" />
+    <Content Include="Apps\Resources\Images\Icons\stamp.png" />
+    <Content Include="Apps\Resources\Images\Icons\stickyNotes.png" />
+    <Content Include="Apps\Resources\Images\Icons\strikethrough.png" />
+    <Content Include="Apps\Resources\Images\Icons\tableicon.png" />
+    <Content Include="Apps\Resources\Images\Icons\Text-field1.png" />
+    <Content Include="Apps\Resources\Images\Icons\Text-field2.png" />
+    <Content Include="Apps\Resources\Images\Icons\tHighlight.png" />
+    <Content Include="Apps\Resources\Images\Icons\Thumbnails.png" />
+    <Content Include="Apps\Resources\Images\Icons\ToBack.png" />
+    <Content Include="Apps\Resources\Images\Icons\ToFirst.png" />
+    <Content Include="Apps\Resources\Images\Icons\ToFront.png" />
+    <Content Include="Apps\Resources\Images\Icons\ToLast.png" />
+    <Content Include="Apps\Resources\Images\Icons\top-align.png" />
+    <Content Include="Apps\Resources\Images\Icons\tRedact.png" />
+    <Content Include="Apps\Resources\Images\Icons\triangle.png" />
+    <Content Include="Apps\Resources\Images\Icons\underline.png" />
+    <Content Include="Apps\Resources\Images\Icons\Undo.png" />
+    <Content Include="Apps\Resources\Images\Icons\Ungroup.png" />
+    <Content Include="Apps\Resources\Images\Icons\unlock.png" />
+    <Content Include="Apps\Resources\Images\Icons\unstructure.png" />
+    <Content Include="Apps\Resources\Images\Icons\UserName.png" />
+    <Content Include="Apps\Resources\Images\Icons\VerticalLayout.png" />
+    <Content Include="Apps\Resources\Images\Icons\video.png" />
+    <Content Include="Apps\Resources\Images\Icons\ViewAsImage.png" />
+    <Content Include="Apps\Resources\Images\Icons\ViewAsSvg.png" />
+    <Content Include="Apps\Resources\Images\Icons\WordDoc.png" />
+    <Content Include="Apps\Resources\Images\Icons\ZoomIn-Small.png" />
+    <Content Include="Apps\Resources\Images\Icons\ZoomIn.png" />
+    <Content Include="Apps\Resources\Images\Icons\ZoomMode.png" />
+    <Content Include="Apps\Resources\Images\Icons\ZoomOut-Small.png" />
+    <Content Include="Apps\Resources\Images\Icons\ZoomOut.png" />
+    <Content Include="Apps\Resources\Images\Icons\ZoomToMode.png" />
+    <Content Include="Apps\Resources\Images\LEAD.png" />
+    <Content Include="Apps\Resources\Images\LeadtoolsHeader.png" />
+    <Content Include="Apps\Resources\Images\loading.GIF" />
+    <Content Include="Apps\Resources\Images\LoadingBar-Small.gif" />
+    <Content Include="Apps\Resources\Images\LoadingBar.GIF" />
+    <Content Include="Apps\Resources\NoHTML5Support.html" />
+    <Content Include="Apps\Resources\Styles\AutomationObjectsList.css" />
+    <Content Include="Apps\Resources\Styles\dialogs.css" />
+    <Content Include="Apps\Resources\Styles\Icons.css" />
+    <Content Include="Apps\Resources\Styles\LEADServiceStyles.css" />
+    <Content Include="Apps\Resources\Styles\Sidebar.css" />
+    <Content Include="Apps\Resources\Styles\Site.css" />
+    <Content Include="Apps\Resources\Styles\spectrum\spectrum.css" />
+    <Content Include="Apps\Resources\Styles\Table.css" />
+    <Content Include="Apps\Resources\Styles\Toolbar.css" />
+    <Content Include="Apps\serviceConfig.json" />
+    <Content Include="Apps\Annotations\Resources\Images\Leadtools.pdf" />
+    <Content Include="Apps\Annotations\App\AnnOmrObject\AnnOmrObject.js.map" />
+    <Content Include="Apps\Annotations\App\AnnTextObject\AnnTextObject.js.map" />
+    <Content Include="Apps\Annotations\App\CustomFieldInfo.js.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="local.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Data\MasterFormDB.sdf" />
+    <Content Include="App_Data\XmlDocument.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\barBot.png" />
+    <Content Include="Content\bootstrap-select.min.css" />
+    <Content Include="Content\Icon\Back.gif" />
+    <Content Include="Content\Icon\background forms.png" />
+    <Content Include="Content\Icon\barBot.png" />
+    <Content Include="Content\Icon\Clear.png" />
+    <Content Include="Content\Icon\Document.png" />
+    <Content Include="Content\Icon\Edit.gif" />
+    <Content Include="Content\Icon\IE_FamDef.png" />
+    <Content Include="Content\Icon\newitem.gif" />
+    <Content Include="Content\Icon\REJECT2 %281%29.GIF" />
+    <Content Include="Content\Icon\REJECT2 %282%29.GIF" />
+    <Content Include="Content\Icon\REJECT2.GIF" />
+    <Content Include="Content\Icon\save.gif" />
+    <Content Include="Content\images.jpg" />
+    <Content Include="Content\REJECT2.GIF" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="ExtraAssemblies.targets" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="index.html" />
+    <Content Include="License\LeadtoolsLicense.txt" />
+    <Content Include="MasterForm\Annotation\temp.txt" />
+    <Content Include="MasterForm\temp\temp.txt" />
+    <Content Include="packages.config" />
+    <Content Include="CodeAnalysis\DotNet.ruleset" />
+    <Content Include="Scripts\bootstrap-select.min.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.11.1.js" />
+    <None Include="Properties\PublishProfiles\LeadToolApp.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.11.1.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\notify.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Scripts\Splitter.js" />
+    <Content Include="Views\MasterForm\Editor.cshtml" />
+    <Content Include="Views\MasterForm\Index.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Apps\Annotations\AnnotationsDemoJS.jpg" />
+    <Content Include="Apps\Annotations\App\AnnRichTextObject\jquery-te-1.4.0.css" />
+    <Content Include="Apps\Annotations\App\AnnRichTextObject\jquery-te-1.4.0.js" />
+    <Content Include="Apps\Annotations\App\AnnRichTextObject\jquery-te.png" />
+    <Content Include="Apps\Annotations\index.html" />
+    <Content Include="Apps\Annotations\readme.html" />
+    <Content Include="Apps\Annotations\Resources\Images\ocr1.jpg" />
+    <Content Include="Apps\Annotations\Resources\Images\PngImage.png" />
+    <Content Include="Apps\Annotations\Resources\Styles\AnnotationsDemoStyle.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DataController.cs" />
+    <Compile Include="Controllers\GenerateFileController.cs" />
+    <Compile Include="Controllers\MasterFormApiController.cs" />
+    <Compile Include="Controllers\MasterFormController.cs" />
+    <Compile Include="Controllers\RasterController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BankCheckModels.cs" />
+    <Compile Include="Models\BarcodeModels.cs" />
+    <Compile Include="Models\CommonModel.cs" />
+    <Compile Include="Models\CustomFieldInfo.cs" />
+    <Compile Include="Models\DBHelper.cs" />
+    <Compile Include="Models\DirectryModel.cs" />
+    <Compile Include="Models\DriversLicenseModels.cs" />
+    <Compile Include="Models\MRTDModels.cs" />
+    <Compile Include="Models\PdfModels.cs" />
+    <Compile Include="Models\RasterModels.cs" />
+    <Compile Include="Models\TestModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\Exceptions\ControllerActivator.cs" />
+    <Compile Include="Tools\Exceptions\GlobalExceptionFilter.cs" />
+    <Compile Include="Tools\Exceptions\GlobalExceptionHandler.cs" />
+    <Compile Include="Tools\Exceptions\GlobalExceptionLogger.cs" />
+    <Compile Include="Tools\Exceptions\ServiceException.cs" />
+    <Compile Include="Tools\Helpers\ImageResizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\Helpers\ImageSaver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\Helpers\OCRHelper.cs" />
+    <Compile Include="Tools\Helpers\ServiceHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <TypeScriptCompile Include="..\Common\Common.ts">
+      <Link>Apps\Common\Common.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Dialogs\AboutDlg.ts">
+      <Link>Apps\Common\Dialogs\AboutDlg.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Dialogs\LoadingDlg.ts">
+      <Link>Apps\Common\Dialogs\LoadingDlg.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Dialogs\OpenFileDlg.ts">
+      <Link>Apps\Common\Dialogs\OpenFileDlg.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Dialogs\TextResultDlg.ts">
+      <Link>Apps\Common\Dialogs\TextResultDlg.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Libs\bootstrap\bootstrap.d.ts">
+      <Link>Apps\Common\Libs\bootstrap\bootstrap.d.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Libs\jquery\jquery.d.ts">
+      <Link>Apps\Common\Libs\jquery\jquery.d.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Libs\Leadtools.Annotations.Automation.d.ts">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.Automation.d.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Libs\Leadtools.Annotations.Core.d.ts">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.Core.d.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Libs\Leadtools.Annotations.Designers.d.ts">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.Designers.d.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Libs\Leadtools.Annotations.Documents.d.ts">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.Documents.d.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Libs\Leadtools.Annotations.JavaScript.d.ts">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.JavaScript.d.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Libs\Leadtools.Annotations.Rendering.JavaScript.d.ts">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.Rendering.JavaScript.d.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Libs\Leadtools.Annotations.UserMedicalPack.d.ts">
+      <Link>Apps\Common\Libs\Leadtools.Annotations.UserMedicalPack.d.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Libs\Leadtools.Controls.d.ts">
+      <Link>Apps\Common\Libs\Leadtools.Controls.d.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Libs\Leadtools.Controls.Medical.d.ts">
+      <Link>Apps\Common\Libs\Leadtools.Controls.Medical.d.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Libs\Leadtools.d.ts">
+      <Link>Apps\Common\Libs\Leadtools.d.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Common\Utils.ts">
+      <Link>Apps\Common\Utils.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Apps\Annotations\App\AnnCustomObject\AnnTriangleDrawDesigner.ts" />
+    <TypeScriptCompile Include="Apps\Annotations\App\AnnCustomObject\AnnTriangleEditDesigner.ts" />
+    <TypeScriptCompile Include="Apps\Annotations\App\AnnCustomObject\AnnTriangleObject.ts" />
+    <TypeScriptCompile Include="Apps\Annotations\App\AnnCustomObject\AnnTriangleRenderer.ts" />
+    <TypeScriptCompile Include="Apps\Annotations\App\AnnOmrObject\AnnOmrObject.ts" />
+    <TypeScriptCompile Include="Apps\Annotations\App\AnnotationLoadSaveHelper.ts" />
+    <TypeScriptCompile Include="Apps\Annotations\App\AnnotationsDemo.ts" />
+    <TypeScriptCompile Include="Apps\Annotations\App\AnnRichTextObject\AnnRichTextDrawDesigner.ts" />
+    <TypeScriptCompile Include="Apps\Annotations\App\AnnRichTextObject\AnnRichTextEditDesigner.ts" />
+    <TypeScriptCompile Include="Apps\Annotations\App\AnnRichTextObject\AnnRichTextObject.ts" />
+    <TypeScriptCompile Include="Apps\Annotations\App\AnnRichTextObject\AnnRichTextRenderer.ts" />
+    <TypeScriptCompile Include="Apps\Annotations\App\AnnTextObject\AnnTextObject.ts" />
+    <TypeScriptCompile Include="Apps\Annotations\App\CustomFieldInfo.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- The below target copies all linked files from their link directories to where they should be in the project. This is necessary for our static server.-->
+  <Target Name="CopyLinkedFiles" BeforeTargets="Build">
+    <ItemGroup>
+      <LinkedItem Include="@(Content)" Condition="%(Content.Link) != ''" />
+    </ItemGroup>
+    <Copy SourceFiles="@(LinkedItem)" DestinationFiles="%(LinkedItem.Link)" />
+  </Target>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>21223</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8560/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- Check the bitness of IIS Express if we are trying to run this project using those conditions -->
+  <Target Name="AfterBuild" Condition="'$(UseIISExpress)' == 'true' And '$(BuildingInsideVisualStudio)' == 'true'">
+    <Message Text="Checking the bitness of IIS Express against the current configuration..." />
+    <Exec Command="..\Common\CheckIISExpressBitness.bat $(Platform) $(VisualStudioVersion)" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.104.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net45\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.104.0\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>

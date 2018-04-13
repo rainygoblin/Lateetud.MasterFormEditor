@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<leadtools_form_processing_fields>
+   <pages>
+      <page number="1" dpix="150" dpiy="150">
+         <fields />
+      </page>
+      <page number="2" dpix="150" dpiy="150">
+         <fields />
+      </page>
+   </pages>
+</leadtools_form_processing_fields>

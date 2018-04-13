@@ -1,0 +1,109 @@
+<!-- List of files that are not referenced directly by the project but are required to be in the bin folder -->
+<!-- These includes file filters and other .NET assemblies that are loaded at runtime -->
+<!-- You can add or remove any of these files if not required by your depolyment -->
+<Project DefaultTargets = "Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >
+  <ItemGroup>
+    <None Include="$(LeadConfigPath)DocumentFormat.OpenXml.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Kernel.Annotations.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Annotations.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.Bmp.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.Cmp.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.Cmw.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.Fax.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.Gif.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.J2k.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.Jb2.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.Jbg.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.PdfEngine.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.Png.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.Raw.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.Tif.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Codecs.Wmf.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.ColorConversion.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Forms.Ocr.Advantage.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Forms.SpellCheckers.Hunspell.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Forms.SpellCheckers.OS.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.ImageProcessing.Color.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.ImageProcessing.Effects.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.ImageProcessing.SpecialEffects.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.ImageProcessing.Utilities.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Barcode.DatamatrixRead.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Barcode.OneD.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Barcode.PdfRead.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Barcode.QrRead.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Barcode.Lead2DRead.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Drawing.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Svg.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Forms.Recognition.Barcode.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(LeadConfigPath)Leadtools.Forms.Recognition.Ocr.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

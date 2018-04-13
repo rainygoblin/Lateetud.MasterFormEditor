@@ -1,0 +1,773 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApp</name>
+    </assembly>
+    <members>
+        <member name="T:Leadtools.JSDemos.Controllers.DataController">
+            <summary>
+            For use with the Annotations Demo, showing that annotations can be saved to
+            the server and then downloaded and reloaded.
+            </summary>
+        </member>
+        <member name="M:Leadtools.JSDemos.Controllers.DataController.Download(System.String,System.String,System.Uri)">
+            <summary>
+            Redirects data as a stream for downloading.
+            This method is useful for "Save" operation from JavaScript. For example, the Annotations demo will serialize the container as XML
+            and then calls Get passing text/xml as the mime type and the serialized string as data, then does a window.open(url) to allow
+            the user to save the container XML file to their machine.
+            </summary>
+            <param name="uri">The uri of the data.</param>
+            <param name="mimeType">Mime type - any is supported.</param>
+            <param name="name">Optional name for the data file when downloaded.</param>
+            <returns>The annotations data, as a stream, for downloading.</returns>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:Leadtools.JSDemos.Controllers.DataController.SaveXml(System.Xml.XmlElement,System.String)">
+            <summary>
+            Saves the data as XML to a local file and returns the URL to the file. Used in conjunction with "Download" to download the XML (annotation) data.
+            </summary>
+            <param name="data">Data to save, in XML.</param>
+            <param name="FolderName">folder name</param>
+            <returns>The path to the file.</returns>
+        </member>
+        <member name="M:Leadtools.JSDemos.Controllers.DataController.LoadXml(System.String)">
+            <summary>
+            Saves the data as XML to a local file and returns the URL to the file. Used in conjunction with "Download" to download the XML (annotation) data.
+            </summary>
+            <param name="FolderName">Data to save, in XML.</param>
+            <returns>The path to the file.</returns>
+        </member>
+        <member name="T:Leadtools.JSDemos.Controllers.RasterController">
+            <summary>
+            For use with many of the JavaScript Demos, gathering basic information
+            about an image and loading it.
+            </summary>
+        </member>
+        <member name="M:Leadtools.JSDemos.Controllers.RasterController.Info(System.Uri,System.Int32)">
+            <summary>
+            Gets the information about an image, such as mimetype, size, and resolution.
+            </summary>
+            <param name="uri">The source URI. http, ftp and file protocols are supported.</param>
+            <param name="pageNumber">1-based page number.</param>
+            <returns>The ImageInfo for the image at the URI.</returns>
+        </member>
+        <member name="M:Leadtools.JSDemos.Controllers.RasterController.Load(System.Uri,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Loads an image and returns it in one of the specfied formats.
+            </summary>
+            <param name="uri">The source URI. http, ftp and file protocols are supported.</param>
+            <param name="pageNumber">1-based page number to load.</param>
+            <param name="resolution">Resolution to use if the image does not have one. For example, to load a PDF or DOC file at 300 DPI, pass 300 for the resolution
+            value.</param>
+            <param name="mimeType">Output image format. Currently supports
+              "image/jpeg" for JPEG (Supported by all browsers),
+              "image/png" for PNG (Supported by all browsers),
+              "image/gif" for GIF (Supported by all browsers),
+              "image/tiff" for TIF (Not supported by default by any browser),
+              "image/x-lead-cmp" for LEAD CMP (Not supported by default by any browser),
+              "image/bmp" for BMP (Not supported by default by any browser),
+              "application/pdf" for PDF (Not supported by default by any browser),
+              "image/x-jpeg-2000" for JPEG 2000 (Not supported by default by any browser),
+              "image/x-lead-cmw" for LEAD CMW (Not supported by default by any browser),
+              "image/x-jpeg-xr" for JPEG XR (JXR) (Not supported by default by any browser),
+              "image/x-xps" for Microsoft XPS (Not supported by default by any browser).
+            </param>
+            <param name="bitsPerPixel">Save bits per pixel. The default value of 0 means to use the best value based on input image
+            bits per pixel and the values supported by the output format.</param>
+            <param name="qualityFactor">Quality factor. Used by JPEG, PNG and TIFF with embedded JPEG images.
+              0: Default value by the format. For example, 20 for JPEG and PNG images.
+              1 .. 99: Value to use. 1 = Low quality/Smallest image size, 99 = High quality/Largest image size. 
+              100: Highest quality. For JPEG, this produces lossless JPEG files that are not supported by any of the current browsers.
+            </param>
+            <param name="imageWidth">Width in pixels of the result image. Default value is 0 which means use the input image width. This method will use the value of
+            width and height to resize the input image to a size that does not exceed "width" by "height" pixels, keeping the original
+            image aspect ratio. To not use resizing, do not pass a parameter for width nor height.</param>
+            <param name="imageHeight">Height in pixels of the result image.</param>
+            <returns>A stream containing the image data.</returns>
+        </member>
+        <member name="T:Leadtools.JSDemos.Controllers.TestController">
+            <summary>
+            For use with many of the JavaScript Demos, checking for a service connection
+            and checking for the state of the LEADTOOLS license.
+            </summary>
+        </member>
+        <member name="M:Leadtools.JSDemos.Controllers.TestController.Ping">
+            <summary>
+            Checks for a connection to the service and the state of the LEADTOOLS kernel.
+            </summary>
+            <returns>Information on the status of the LEADTOOLS kernel.</returns>
+        </member>
+        <member name="T:Leadtools.JSDemos.Models.BankCheck.BankCheckFieldData">
+            <summary>
+            A representation of a field from a processed bank check.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.BankCheck.BankCheckFieldData.Uri">
+            <summary>
+            The original URI passed by the user
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.BankCheck.BankCheckFieldData.Name">
+            <summary>
+            Field name
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.BankCheck.BankCheckFieldData.Value">
+            <summary>
+            Value, as a string
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.BankCheck.BankCheckFieldData.Left">
+            <summary>
+            Bounding rectangle left position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.BankCheck.BankCheckFieldData.Top">
+            <summary>
+            Bounding rectangle top position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.BankCheck.BankCheckFieldData.Right">
+            <summary>
+            Bounding rectangle right position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.BankCheck.BankCheckFieldData.Bottom">
+            <summary>
+            Bounding rectangle bottom position in pixels
+            </summary>
+        </member>
+        <member name="T:Leadtools.JSDemos.Models.Barcode.BarcodeData">
+            <summary>
+            A representation of the data from a barcode image.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Barcode.BarcodeData.Uri">
+            <summary>
+            The original URI passed by the user
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Barcode.BarcodeData.SymbologyId">
+            <summary>
+            Symbology ID (integer value of BarcodeSymbology)
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Barcode.BarcodeData.SymbologyName">
+            <summary>
+            Symbology name (string representation of BarcodeSymbology)
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Barcode.BarcodeData.Left">
+            <summary>
+            Bounding rectangle left position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Barcode.BarcodeData.Top">
+            <summary>
+            Bounding rectangle top position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Barcode.BarcodeData.Right">
+            <summary>
+            Bounding rectangle right position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Barcode.BarcodeData.Bottom">
+            <summary>
+            Bounding rectangle bottom position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Barcode.BarcodeData.RotationAngle">
+            <summary>
+            Rotation angle in degrees (if any)
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Barcode.BarcodeData.Value">
+            <summary>
+            Value, as string
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Barcode.BarcodeData.Data">
+            <summary>
+            Data, as bytes
+            </summary>
+        </member>
+        <member name="T:Leadtools.JSDemos.Models.DriversLicense.LicenseFieldData">
+            <summary>
+            A representation of a field from a processed driver's license.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.LicenseFieldData.Name">
+            <summary>
+            Field name
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.LicenseFieldData.Field">
+            <summary>
+            The original URI passed by the user
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.LicenseFieldData.Type">
+            <summary>
+            Field Type "TextFormField"
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.LicenseFieldData.Result">
+            <summary>
+            Recognition result
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.LicenseFieldData.Confidence">
+            <summary>
+            Average confidence of all detected characters
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.LicenseFieldData.BoundingRectangle">
+            <summary>
+            Bounding rectangle of the field
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.LicenseFieldData.Left">
+            <summary>
+            Bounding rectangle left position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.LicenseFieldData.Top">
+            <summary>
+            Bounding rectangle top position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.LicenseFieldData.Right">
+            <summary>
+            Bounding rectangle right position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.LicenseFieldData.Bottom">
+            <summary>
+            Bounding rectangle bottom position in pixels
+            </summary>
+        </member>
+        <member name="T:Leadtools.JSDemos.Models.DriversLicense.MasterForm">
+            <summary>
+            A representation of a Master Form.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.MasterForm.Image">
+            <summary>
+            Raster Image
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.MasterForm.Attributes">
+            <summary>
+            Form Recognition Attributes
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.MasterForm.Properties">
+            <summary>
+            Form Recognition Properties
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.MasterForm.ProcessingPages">
+            <summary>
+            Form Pages
+            </summary>
+        </member>
+        <member name="T:Leadtools.JSDemos.Models.DriversLicense.FilledForm">
+            <summary>
+            A representation of a filled form.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.FilledForm.Uri">
+            <summary>
+            The original URI
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.FilledForm.Alignment">
+            <summary>
+            Alignment Pages
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.FilledForm.Result">
+            <summary>
+            Form Recognition Result
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.FilledForm.Image">
+            <summary>
+            Raster Image
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.FilledForm.Attributes">
+            <summary>
+            Form Recognition Attributes
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.FilledForm.Master">
+            <summary>
+            Master Form
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.FilledForm.ProcessingPages">
+            <summary>
+            Processing Pages
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.FilledForm.Left">
+            <summary>
+            Bounding rectangle left position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.FilledForm.Top">
+            <summary>
+            Bounding rectangle top position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.FilledForm.Right">
+            <summary>
+            Bounding rectangle right in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.DriversLicense.FilledForm.Bottom">
+            <summary>
+            Bounding rectangle bottom in pixels
+            </summary>
+        </member>
+        <member name="T:Leadtools.JSDemos.Models.MRTD.MRTDDataElement">
+            <summary>
+            Representation of a single element from a MRTD (Machine Readable Travel Document)
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDDataElement.Name">
+            <summary>
+            Element name
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDDataElement.BeginIndex">
+            <summary>
+            Beginning index
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDDataElement.IsValid">
+            <summary>
+            Validity
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDDataElement.Length">
+            <summary>
+            Length
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDDataElement.LineIndex">
+            <summary>
+            Line index
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDDataElement.MrzCharacters">
+            <summary>
+            MRZ Value
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDDataElement.ReadableValue">
+            <summary>
+            Value, as a readable string
+            </summary>
+        </member>
+        <member name="T:Leadtools.JSDemos.Models.MRTD.MRTDReaderData">
+            <summary>
+            Representation of the data from a MRTD (Machine Readable Travel Document)
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDReaderData.Uri">
+            <summary>
+            The original URI passed by the user
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDReaderData.Left">
+            <summary>
+            Bounding rectangle left position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDReaderData.Top">
+            <summary>
+            Bounding rectangle top position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDReaderData.Right">
+            <summary>
+            Bounding rectangle right position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDReaderData.Bottom">
+            <summary>
+            Bounding rectangle bottom position in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDReaderData.Lines">
+            <summary>
+            MRTD Fields
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDReaderData.Results">
+            <summary>
+            Array of MRZ Characters lines
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.MRTD.MRTDReaderData.Errors">
+            <summary>
+            MRTD Errors
+            </summary>
+        </member>
+        <member name="T:Leadtools.JSDemos.Models.Pdf.PdfBookmark">
+            <summary>
+            Representation of a PDF bookmark.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfBookmark.Level">
+            <summary>
+            The level in the hierarchy of this bookmark.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfBookmark.TargetPageNumber">
+            <summary>
+            The page number to which this bookmark maps.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfBookmark.Title">
+            <summary>
+            The bookmark title.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfBookmark.TargetXPosition">
+            <summary>
+            The X coordinate of the bookmark.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfBookmark.TargetYPosition">
+            <summary>
+            The Y coordinate of the bookmark.
+            </summary>
+        </member>
+        <member name="T:Leadtools.JSDemos.Models.Pdf.PdfFormField">
+            <summary>
+            Representation of a PDF's form field.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.Bounds">
+            <summary>
+            The bounds of the field.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.PageNumber">
+            <summary>
+            The page number that the field is on.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.Name">
+            <summary>
+            The field name.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.AlternateName">
+            <summary>
+            The alternate name for the field.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.MappingName">
+            <summary>
+            The mapping name.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.OptionalName">
+            <summary>
+            The optional name.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.FieldType">
+            <summary>
+            The type of form field on the PDF.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.ContentType">
+            <summary>
+            The type of the field content.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.Contents">
+            <summary>
+            The contents, as an array of strings.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.ContentValues">
+            <summary>
+            The associated content values.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.MaxLength">
+            <summary>
+            The maximum allowed input length for the PDF field.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.GroupId">
+            <summary>
+            The associated Group ID.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.SelectedContents">
+            <summary>
+            The contents that are selected.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.State">
+            <summary>
+            The field state.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.FieldFlags">
+            <summary>
+            The field flags.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.ViewFlags">
+            <summary>
+            The view flags.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.FillMode">
+            <summary>
+            The fill mode used on the PDF field.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.FillColor">
+            <summary>
+            The fill color for the form field.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.BorderStyle">
+            <summary>
+            The border style.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.BorderWidth">
+            <summary>
+            The width of the border.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.BorderColor">
+            <summary>
+            The color of the border.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.TextColor">
+            <summary>
+            The color of the text.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.FontName">
+            <summary>
+            The name of the font used.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.FontSize">
+            <summary>
+            The size of the font.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.TextJustification">
+            <summary>
+            The justification of the form field text.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfFormField.Rotation">
+            <summary>
+            The rotation angle, if any.
+            </summary>
+        </member>
+        <member name="T:Leadtools.JSDemos.Models.Pdf.PdfSignature">
+            <summary>
+            A representation of the signature for a PDF.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfSignature.Bounds">
+            <summary>
+            The bounds of the signature.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfSignature.CanValidate">
+            <summary>
+            Can this signature be validated?
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfSignature.CertificateInfo">
+            <summary>
+            A dictionary containing all certificate info found.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfSignature.KeyUsage">
+            <summary>
+            The key usage.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfSignature.PageNumber">
+            <summary>
+            The page number of the signature.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfSignature.PublicKeyBits">
+            <summary>
+            The bits used for the public key.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfSignature.PublicKeyType">
+            <summary>
+            The type of public key being used.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfSignature.State">
+            <summary>
+            The state of the signature.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfSignature.ValidFrom">
+            <summary>
+            The date and time from which the signature is valid.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfSignature.ValidTo">
+            <summary>
+            The date and time until whcih the signature is valid.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Pdf.PdfSignature.Version">
+            <summary>
+            The associated version of the signature.
+            </summary>
+        </member>
+        <member name="T:Leadtools.JSDemos.Models.Raster.ImageInfo">
+            <summary>
+            Representation of an image.
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.Uri">
+            <summary>
+            The original URI passed by the user
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.FormatId">
+            <summary>
+            Format ID (integer value of RasterImageFormat)
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.FormatName">
+            <summary>
+            Format name (string representation of RasterImageFormat)
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.MimeType">
+            <summary>
+            MIME type
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.BrowserCompatible">
+            <summary>
+            Can the image be viewer directly in a browser? PNG, GIF or JPEG
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.Width">
+            <summary>
+            Width in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.Height">
+            <summary>
+            Height in pixels
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.BitsPerPixel">
+            <summary>
+            Bits/Pixel
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.BytesPerLine">
+            <summary>
+            Bytes/Line
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.SizeDisk">
+            <summary>
+            Size in disk in bytes
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.SizeMemory">
+            <summary>
+            Size in memory in bytes
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.Compression">
+            <summary>
+            Compression
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.ViewPerspective">
+            <summary>
+            View prespective (string representation of RasterViewPerspective)
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.Order">
+            <summary>
+            Order (string representation of RasterByteOrder)
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.ColorSpace">
+            <summary>
+            Color space (string representation of RasterColorSpace)
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.PageNumber">
+            <summary>
+            Page number
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.TotalPages">
+            <summary>
+            Total number of pages
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.HasResolution">
+            <summary>
+            Does the image have resolution?
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.XResolution">
+            <summary>
+            X Resolution of the image
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.YResolution">
+            <summary>
+            Y Resolution of the image
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.IsRotated">
+            <summary>
+            Is the image rotated?
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.IsSigned">
+            <summary>
+            Is the data signed?
+            </summary>
+        </member>
+        <member name="P:Leadtools.JSDemos.Models.Raster.ImageInfo.HasAlpha">
+            <summary>
+            Does the image have alpha values?
+            </summary>
+        </member>
+        <member name="T:Leadtools.JSDemos.Models.Test.PingResponse">
+            <summary>
+            Information on the status of the service and LEADTOOLS license.
+            </summary>
+        </member>
+    </members>
+</doc>

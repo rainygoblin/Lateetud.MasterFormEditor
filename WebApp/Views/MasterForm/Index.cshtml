@@ -1,0 +1,466 @@
+﻿@using System.Configuration;
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+<script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+<link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+<script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+<link href="@Url.Content("~/Content/bootstrap-select.min.css")" rel="stylesheet" />
+<script src="@Url.Content("~/Scripts/bootstrap-select.min.js")"></script>
+<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+<script src="@Url.Content("~/Scripts/notify.js")"></script>
+
+
+    <title>Lateetud</title>
+</head>
+<body>
+<input type="hidden" id="rootFolderName" value="@ConfigurationManager.AppSettings["RootFolderName"]" />
+<input type="hidden" id="BaseUrl" value="@ConfigurationManager.AppSettings["SiteURL"]" />
+    
+<div class="container dvHomeContainter">
+    <div id="TopPanDiv">
+        <span>MASTER FORM</span>
+    </div>
+    <!-- Loading dialog -->
+    <div class="modal fade" id="loadingDialog" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img id="imgLoader" src="../Apps/Resources/Images/loading.gif" />
+                    &nbsp;&nbsp;
+                    <label id="processText">Please wait...</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------->
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#TabUploadFile">Open Master Form</a></li>
+            <li class=""><a data-toggle="tab" href="#TabCreateForm">New Master Form</a></li>
+        </ul>
+        <div class="tab-content" style="overflow: hidden;">
+            <div class="tab-pane " id="TabCreateForm">
+                <div class="form-group">
+                    <table class="table ">
+                        <tr>
+                            <td><span for="txtFormName" class="clsmasterformlabel">Master Form Name</span><font color="red">*</font> </td>
+                            <td>
+                                <div class="ob_iTC">
+                                    <input type="text" name="txtFormName" id="txtFormName" maxlength="100" class="textbox" placeholder="Master Form Name" title="Enter master form name" />
+                                </div>
+                                   <span id="spFormName"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input id="btnCreate" type="button" class="btn btn-default" value="Create" onclick="CreateMasterForm()" />
+                                <input id="btnCreate" type="button" class="btn btn-default" value="Cancel" onclick="ActivaTab('TabUploadFile')" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane active" id="TabUploadFile">
+                <table class="table ">
+                    <tr>
+                        <td><span for="txtFormName" class="clsmasterformlabel label-normal-bidi">Select Master Form</span><font color="red">*</font>  </td>
+                        <td>
+                            <select class="selectpicker dropdownlist" data-live-search="true" title="Please select master form" id="ddlFrom" onchange="DisableUploadButton()">
+                                <option value="0">Select Master Form</option>
+                            </select>
+                            <div id="spFileName"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span for="txtFormName" class="clsmasterformlabel">Select File</span><font color="red">*</font>  </td>
+                        <td>
+                            <input type="file" accept=".tif,.pdf,.jpg,.jpeg,.png" id="file" title="Choose file" />
+                            <span id="spfile"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" class="btn btn-default" onclick="UploadFile()" value="Upload" />
+                            <input id="btnGotohome" onclick="GotoHomePage()" style="display:none" type="button" class="btn btn-default" value="Go To Master Form" />
+                            <input type="button" class="btn btn-default" onclick="DeleteForm()" value="Delete" />
+                            <input id="btnCreate" type="button" class="btn btn-default" value="New Master Form" onclick="ActivaTab('TabCreateForm')" />
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="notifications" style="margin:5px;"></div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    var FormName; //this is global variable,this variable is set when master form created successfully.
+    var lastDropDownvalue = '';
+
+    $(document).ready(function ($) {
+        $('.selectpicker').selectpicker({
+            //style: 'btn-info',
+            size: 5
+        });
+        BindFormList();
+    });
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        if (this.hash == "#TabUploadFile") {
+            $('#dvmsg').text("");
+            BindFormList();
+            $('#btnGotohome').hide();
+        }
+        else {
+            $('#txtFormName').focus();
+        }
+    });
+
+    function SetLocalStorageValue(name, value) {
+        localStorage.setItem(name, value);
+    }
+    function RemoveLocalStorageValue(name) {
+        localStorage.removeItem(name);
+    }
+    function DeleteForm() {
+        if ($("#ddlFrom option:selected").val() != "0" && $("#ddlFrom option:selected").val() != "") {
+            var c = confirm("Are you sure you want to delete?");
+            if (c == false) {
+                return;
+            }
+            try {
+                ShowLoader(true, "");
+                var path = $('#BaseUrl').val() + '/api/MasterFormApi/DeleteMasterForm';
+                $.ajax({
+                    type: 'Delete',
+                    url: path,
+                    data: 'Guid=' + $("#ddlFrom").val(),
+                    success: function (data) {
+                        try {
+                            ShowLoader(false, "");
+                            if (data == "success") {
+                                Notify("Master form deleted successfully ", null, null, 'success');
+                                RemoveLocalStorageValue('Masterform_index_ddlFrom');
+                                BindFormList();
+                            }
+                            else {
+                                Notify("Something wrong..", null, null, 'danger');
+                            }
+                        } catch (e) {
+                            ShowLoader(false, "");
+                            console.log("Error" + e.message);
+                        }
+                    },
+                    error: function (e) {
+                        ShowLoader(false, "");
+                        console.log("Error" + e.message);
+                    }
+                });
+            }
+            catch (e) {
+                ShowLoader(false, "");
+                console.log("Error" + e.message);
+            }
+        }
+        else {
+            Notify("Please select master form.", null, null, 'danger');
+        }
+    }
+
+    function ActivaTab(tab) {
+        $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+    };
+    function ResetForm() {
+        ActivaTab("TabCreateForm");
+        $('#txtFormName').val(null);
+        $('#dvmsg').text("");
+    }
+    function CreateMasterForm() {
+        try {
+            if ($('#txtFormName').val().trim() == '') {
+                $('#spFormName').text("Please enter master form name").css("color", "red");
+                return;
+            }
+            if (!ValidateMasterFormName($('#txtFormName'))) {
+                $('#spFormName').text("Please enter valid master form name").css("color", "red");
+                return;
+            }
+            $('#spFormName').text("");
+            ShowLoader(true, "");
+            var path = $('#BaseUrl').val() + '/api/MasterFormApi/Create';
+            $.ajax({
+                type: 'POST',
+                url: path,
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({
+                    Name: $('#txtFormName').val()
+                }),
+                success: function (data) {
+                    try {
+                        ShowLoader(false, "");
+                        if (data == "success") {
+                            FormName = $('#txtFormName').val();
+
+                            $('#txtFormName').val(null);
+                            Notify("Master form created successfully", null, null, 'success');
+                            ActivaTab("TabUploadFile");
+                        }
+                        else if (data == "exists") {
+                            Notify("Master form already exists", null, null, 'warning');
+                        }
+                        else {
+                            Notify("Some problem in create master form", null, null, 'danger');
+                        }
+                    } catch (e) {
+                        ShowLoader(false, "");
+                        console.log("Error" + e.message);
+                    }
+                },
+                error: function () {
+                    ShowLoader(false, "");
+                }
+            });
+        } catch (e) {
+            ShowLoader(false, "");
+            console.log("Error" + e.message);
+        }
+    }
+    function DisableUploadButton() {
+
+        var tifPageCount = $('#ddlFrom option:selected').attr('tifPageCount');
+        SetLocalStorageValue('Masterform_index_ddlFrom', $('#ddlFrom').val());
+        if (tifPageCount == "0" || $('#ddlFrom').val() == "0" || tifPageCount == undefined) {
+            $('#btnGotohome').hide();
+        }
+        else {
+            $('#btnGotohome').show();
+        }
+    }
+    function BindFormList() {
+        try {
+            ShowLoader(true, "");
+            var path = $('#BaseUrl').val() + '/api/MasterFormApi/Formlist';
+            $.ajax({
+                type: 'POST',
+                url: path,
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    try {
+                        ShowLoader(false, "");
+                        $("#ddlFrom").empty();
+                        $("#ddlFrom").append($("<option></option>").val("0").html("Select Master Form"));
+
+                        if (data.length > 0) {
+
+                            var isfirstValue = true;
+                            $.each(data, function (key, value) {
+                                if (isfirstValue) {
+                                    isfirstValue = false;
+                                }
+                                if (value.tifPageCount == "0") {
+                                    $("#ddlFrom").append($("<option  data-tokens=" + value.value + " tifPageCount=" + value.tifPageCount + "></option>").val(value.key).html(value.value));
+                                }
+                                else {
+                                    $("#ddlFrom").append($("<option data-tokens=" + value.value + " tifPageCount=" + value.tifPageCount + "></option>").val(value.key).html(value.value));
+                                }
+                            });
+                            $('.selectpicker').selectpicker('refresh')
+
+                            if (FormName != null && FormName != '' && FormName != 'undefined') {
+                                $("#ddlFrom option:contains(" + FormName + ")").attr('selected', 'selected');
+                                FormName = null;
+                                $('.selectpicker').selectpicker('refresh')
+                                SetLocalStorageValue('Masterform_index_ddlFrom', $('#ddlFrom').val());
+
+                            }
+                            else {
+                                if (localStorage.getItem('Masterform_index_ddlFrom') == "" || localStorage.getItem('Masterform_index_ddlFrom') == null)
+                                    SetLocalStorageValue("Masterform_index_ddlFrom", $('#ddlFrom option').eq(2).val());
+                                if (localStorage.getItem('Masterform_index_ddlFrom') != "" || localStorage.getItem('Masterform_index_ddlFrom') != 'undefined') {
+                                    $('.selectpicker').selectpicker('val', localStorage.getItem('Masterform_index_ddlFrom'));
+                                }
+                            }
+                            DisableUploadButton();
+                        }
+                        else {
+                            RemoveLocalStorageValue('Masterform_index_ddlFrom');
+                            $('.selectpicker').selectpicker('refresh');
+                        }
+                    } catch (e) {
+                        ShowLoader(false, "");
+                        console.log("Error" + e.message);
+                    }
+                },
+                error: function (e) {
+                    ShowLoader(false, "");
+                    console.log("Error" + e.message);
+                }
+            });
+        }
+        catch (e) {
+            ShowLoader(false, "");
+            console.log("Error" + e.message);
+        }
+    }
+
+    function UploadFile() {
+        try {
+            var data = new FormData();
+            var files = $("#file").get(0).files;
+            if ($('#ddlFrom').val() == "0" || $('#ddlFrom').val().trim() == "") {
+                $('#spFileName').text("Please select master form").css("color", "red");
+                return;
+            }
+            else {
+                $('#spFileName').text("");
+            }
+            if (files.length > 0) {
+                data.append("UploadedFile", files[0]);
+                $('#spfile').text("");
+                lastDropDownvalue = $('#ddlFrom').val();
+
+                var ext = $('#file').val().split('.').pop().toLowerCase();
+                if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg', 'tif', 'pdf']) == -1) {
+                    alert('Invalid file!');
+                    $("#file").val(null);
+                    return;
+                }
+            }
+            else {
+                $('#spfile').text("Please choose file").css("color", "red");
+                return;
+            }
+            ShowLoader(true, "");
+            var path = $('#BaseUrl').val() + '/api/MasterFormApi/UploadFile';
+            $.ajax({
+                type: 'POST',
+                url: path,
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function (data, textStatus, jqXHR) {
+                    try {
+                        if (textStatus == "success") {
+                            $("#file").val(null);
+                            var fileName = jqXHR["statusText"];
+                            var FileKey = $('#ddlFrom  option:selected').val();
+                            var FriendlyName = $('#ddlFrom option:selected').text();
+                            path = $('#BaseUrl').val() + '/api/GenerateFile/CreateFiles';
+                            $.ajax({
+                                type: 'POST',
+                                url: path,
+                                processData: false,
+                                data: 'FileName=' + fileName
+                                    + '&FolderName=' + FileKey
+                                    + "&FriendlyName=" + FriendlyName,
+                                success: function (data, textStatus, jqXHR) {
+                                    if (data && data.indexOf("successfully") > 0) {
+                                        Notify("Page added to master form set successfully.", null, null, 'success');
+                                        path = $('#BaseUrl').val() + '/api/MasterFormApi/Formlist';
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: path,
+                                            contentType: 'application/json; charset=utf-8',
+                                            success: function (data) {
+                                                try {
+                                                    ShowLoader(false, "");
+                                                    if (data.length > 0) {
+                                                        $("#ddlFrom").empty();
+                                                        var isfirstValue = true;
+                                                        $.each(data, function (key, value) {
+                                                            if (isfirstValue) {
+                                                                $("#ddlFrom").append($("<option></option>").val("0").html("Select form"));
+                                                                isfirstValue = false;
+                                                            }
+                                                            if (value.tifPageCount == "0") {
+                                                                $("#ddlFrom").append($("<option  data-tokens=" + value.value + " tifPageCount=" + value.tifPageCount + "></option>").val(value.key).html(value.value));
+                                                            }
+                                                            else {
+                                                                $("#ddlFrom").append($("<option data-tokens=" + value.value + " tifPageCount=" + value.tifPageCount + "></option>").val(value.key).html(value.value));
+                                                            }
+
+                                                        });
+                                                        if (lastDropDownvalue != '') {
+                                                            $('#ddlFrom').val(lastDropDownvalue);
+                                                            lastDropDownvalue = '';
+                                                        }
+                                                        DisableUploadButton();
+                                                        //$('#ddlFrom').selectpicker('refresh');
+                                                    }
+                                                } catch (e) {
+                                                    ShowLoader(false, "");
+                                                    console.log("Error" + e.message);
+                                                }
+                                            }, error: function (e) {
+                                                ShowLoader(false, "");
+                                                console.log("Error" + e.message);
+                                            }
+                                        });
+                                    }
+                                    else {
+                                        ShowLoader(false, "");
+                                        Notify(data, null, null, 'danger');
+
+                                    }
+                                }, error: function (e) {
+                                    ShowLoader(false, "");
+                                }
+                            });
+                        }
+                        else {
+                            ShowLoader(false, "");
+                            Notify("Somthing wrong.Please try again", null, null, 'danger');
+
+                        }
+                    } catch (e) {
+                        ShowLoader(false, "");
+                        console.log("Error" + e.message);
+                    }
+                }, error: function () {
+                    ShowLoader(false, "");
+                }
+            });
+        }
+        catch (e) {
+            ShowLoader(false, "");
+            console.log("Error" + e.message);
+        }
+    }
+
+    function ValidateMasterFormName(formName) {
+        var fnameRegex = /^(?!^(PRN|AUX|CLOCK\$|NUL|CON|COM\d|LPT\d|\..*)(\..+)?$)[^\x00-\x1f\\?*:\"";|></]+$/;
+        var inputData = $.trim(formName.val());
+        if (inputData == "") {
+            return false;
+        } else if (!fnameRegex.test(inputData)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function GotoHomePage() {
+        window.location.href = $('#BaseUrl').val() + "/Masterform/Editor/" + $('#ddlFrom option:selected').val();
+    }
+
+    function ShowLoader(IsLoaderShow, Message) {
+        if (IsLoaderShow) {
+            ($.trim(Message) == "" ? $('#processText').text("Please wait..") : ('#processText').text(Message));
+            $('#loadingDialog').modal('show');
+        }
+        else {
+            $('#processText').text("");
+            $('#loadingDialog').modal('hide');
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+        }
+    }
+</script>
+</body>
+</html>

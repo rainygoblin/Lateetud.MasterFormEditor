@@ -1,0 +1,34 @@
+<Dictionary>
+  <Words>
+    <Unrecognized>
+      <!--<Word>knokker</Word>-->
+    </Unrecognized>
+    <Recognized>
+      <Word>Leadtools</Word>
+      <Word>Api</Word>
+      <Word>Src</Word>
+      <Word>src</Word>
+      <Word>Svg</Word>
+      <Word>Ocr</Word>
+      <Word>Deskew</Word>
+      <Word>Symbologies</Word>
+      <Word>Symbology</Word>
+      <Word>Mrz</Word>
+    </Recognized>
+    <Deprecated>
+      <Term PreferredAlternate=""></Term>
+    </Deprecated>
+    <Compound>
+      <Term CompoundAlternate=""></Term>
+    </Compound>
+    <DiscreteExceptions>
+    </DiscreteExceptions>
+  </Words>
+  <Acronyms>
+    <CasingExceptions>
+      <!--<Acronym>LTRB</Acronym>-->
+      <Acronym>OCR</Acronym>
+      <Acronym>MRTD</Acronym>
+    </CasingExceptions>
+  </Acronyms>
+</Dictionary>

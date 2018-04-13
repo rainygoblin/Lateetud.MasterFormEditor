@@ -1,0 +1,974 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/Annotations/Resources/Images/favicon.ico")" />
+    <title>Lateetud</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="Stylesheet" href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+    <link rel="stylesheet" href="@Url.Content("~/Apps/Resources/Styles/Site.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Apps/Annotations/Resources/Styles/ThumbnailsDemo.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Apps/Resources/Styles/Toolbar.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Apps/Resources/Styles/Sidebar.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Apps/Resources/Styles/Dialogs.css")" type="text/css" />
+    @*<link rel="stylesheet" href="@Url.Content("~/Apps/Resources/Styles/Table.css")" type="text/css" />*@
+    <link rel="stylesheet" href="@Url.Content("~/Apps/Resources/Styles/Icons.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Apps/Annotations/Resources/Styles/AnnotationsDemoStyle.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Apps/Annotations/App/AnnRichTextObject/jquery-te-1.4.0.css")" type="text/css">
+    <script type="text/javascript">
+        // check if HTML5 canvas is supported
+        if (!("HTMLCanvasElement" in window)) {
+            alert("HTML 5 Canvas not supported, redirecting ...");
+            //location.href = "../Annotations/Resources/NoHTML5Support.html";
+        }
+    </script>
+    <!--In production, consider combining resources for greater performance.-->
+    <!-- External .js files -->
+    <script src="@Url.Content("~/Scripts/jquery-1.11.1.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <!-- Leadtools .js files -->
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Libs/Leadtools.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Libs/Leadtools.Controls.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Libs/Leadtools.Annotations.Core.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Libs/Leadtools.Annotations.Rendering.JavaScript.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Libs/Leadtools.Annotations.designers.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Libs/Leadtools.Annotations.Automation.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Libs/Leadtools.Annotations.UserMedicalPack.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Libs/Leadtools.Annotations.JavaScript.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Libs/Leadtools.Annotations.Documents.js")"></script>
+    <!-- Annotations .js fies -->
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnCustomObject/AnnTriangleDrawDesigner.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnCustomObject/AnnTriangleEditDesigner.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnCustomObject/AnnTriangleObject.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnCustomObject/AnnTriangleRenderer.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnRichTextObject/AnnRichTextDrawDesigner.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnRichTextObject/AnnRichTextEditDesigner.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnRichTextObject/AnnRichTextObject.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnRichTextObject/AnnRichTextRenderer.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnOmrObject/AnnOmrObject.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnTextObject/AnnTextObject.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnRichTextObject/jquery-te-1.4.0.js")" charset="utf-8"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Utils.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Common.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Dialogs/OpenFileDlg.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Dialogs/LoadingDlg.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Common/Dialogs/AboutDlg.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnotationLoadSaveHelper.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/AnnotationsDemo.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/CustomFieldInfo.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Apps/Annotations/App/CustomFieldInfo.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Splitter.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/notify.js")"></script>
+</head>
+<body>
+    @Html.Hidden("BaseUrl", System.Configuration.ConfigurationManager.AppSettings["SiteURL"])
+    @Html.Hidden("hdnfriendlyName", (string)ViewBag.Value)
+    @Html.Hidden("hdnRootFolderName", System.Configuration.ConfigurationManager.AppSettings["RootFolderName"])
+    <input type="hidden" name="name" value="@ViewBag.Key" id="hdnKey" />
+    <!-- Create a header toolbar -->
+    <div class="toolbar headerToolbarDiv">
+        <div class="TopSideBar">
+            <button class="clsButton" id="btnback" style="margin-left:5px" title="Back" onclick="back();">
+                <span class="closeIcon1 setBackGroundImageBack"></span>Back
+            </button>
+            <label class="clsButton btn-file" title="Add Page">
+                <input id="file" type="file" onchange="UploadFile()" accept=".tif,.pdf,.jpg,.jpeg,.png" style="display: none;">
+                <span class="closeIcon1 setBackGroundImageNewitem"></span>Page
+            </label>
+            <button id="DeletePage" class="clsButton" title="Delete Page">
+                <span class="closeIcon1 setBackGroundImageDelete"></span>Page
+            </button>
+            <button id="saveAnnotations" class="clsButton" title="Save Annotations">
+                <span class="closeIcon1 setBackGroundImageSave"></span>Page
+            </button>
+        </div>
+        <button class="annotationObjectBtn btn btn-default HorizontalLine clsButtonAnnotation" title="Pointer" value="-1">
+            <span class="icon pointerIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default clsButtonAnnotation" title="Text Field" value="-51">
+            <span class="icon textFieldIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default clsButtonAnnotation" title="OMR Field" value="-50">
+            <span class="icon OMRFieldIcon"></span>
+        </button>
+        <button id="panZoom" class="interactiveModesBtns btn btn-default clsButtonAnnotation" title="Pan/Zoom" value="0">
+            <span class="icon  panZoomIcon"></span>
+        </button>
+
+        <!-- Size mode : actual size -->
+        <button id="actualSize" class="btn btn-default clsButtonAnnotation" title="Normal">
+            <span class="icon  actualSizeIcon"></span>
+        </button>
+        <!-- Size mode : fit -->
+        <button id="fit" class="btn btn-default clsButtonAnnotation" title="Fit To Window">
+            <span class="icon  fitIcon"></span>
+        </button>
+        <button id="fitWidth" class="btn btn-default clsButtonAnnotation" title="Fit To Image Width">
+            <span class="icon fitWidthIcon"></span>
+        </button>
+        <!-- Zoom in -->
+        <button id="zoomIn" class="btn btn-default clsButtonAnnotation" title="zoom In">
+            <span class="icon  zoomInIcon"></span>
+        </button>
+        <!-- Zoom out -->
+        <button id="zoomOut" class="btn btn-default clsButtonAnnotation" title="Zoom Out">
+            <span class="icon  zoomOutIcon"></span>
+        </button>
+
+        <button class="btn btn-default clsButtonAnnotation" title="Pan" disabled>
+            <span class="icon panIcon"></span>
+        </button>
+
+        <button class="btn btn-default clsButtonAnnotation" title="Table Field" disabled>
+            <span class="icon tableIcon"></span>
+        </button>
+
+        <button class="btn btn-default clsButtonAnnotation" title="Unstructured Text Field" disabled>
+            <span class="icon unstructureIcon"></span>
+        </button>
+
+        <button class="btn btn-default clsButtonAnnotation" title="Barcode Field" disabled>
+            <span class="icon barcodeIcon"></span>
+        </button>
+        <button class="btn btn-default clsButtonAnnotation" title="Image" disabled>
+            <span class="icon imageIcon"></span>
+        </button>
+        <button class="btn btn-default clsButtonAnnotation" title="Select Region" disabled>
+            <span class="icon selectAreaIcon"></span>
+        </button>
+
+        <button class="btn btn-default clsButtonAnnotation" title="Show/Hide Fields" disabled>
+            <span class="icon showhideIcon"></span>
+        </button>
+
+
+
+
+
+        <button id="saveImage" class="btn btn-default hide" title="Save Image" disabled>
+            <span class="icon saveIcon"></span>
+        </button>
+
+        <button id="loadAnnotations" class="btn btn-default hide" title="Load Annotations">
+            <span class="icon openAnnotationIcon"></span>
+        </button>
+
+        <button id="loadBatesStamp" class="btn btn-default hide" title="Load Bates Stamp">
+            <span class="icon loadBatesStampIcon"></span>
+        </button>
+        <button id="undo" class="btn btn-default hide" title="Undo">
+            <span class="icon undoIcon"></span>
+        </button>
+        <button id="redo" class="btn btn-default hide" title="Redo">
+            <span class="icon redoIcon"></span>
+        </button>
+        <button id="deleteAnnotation" class="btn btn-default hide" title="Delete Annotation">
+            <span class="icon closeIcon"></span>
+        </button>
+        <button id="duplicate" class="btn btn-default hide" title="Duplicate">
+            <span class="icon duplicateIcon"></span>
+        </button>
+        <button id="lockObject" class="btn btn-default hide" title="Lock Object">
+            <span class="icon lockIcon"></span>
+        </button>
+        <button id="unlockObject" class="btn btn-default hide" title="Unlock Object">
+            <span class="icon unlockIcon"></span>
+        </button>
+        <button id="applyEncryptor" class="btn btn-default hide" title="Apply Encryptor" disabled>
+            <span class="icon applyEncryptorIcon"></span>
+        </button>
+        <button id="applyDecryptor" class="btn btn-default hide" title="Apply Decryptor" disabled>
+            <span class="icon applyDecryptorIcon"></span>
+        </button>
+        <button id="realizeRedact" class="btn btn-default hide" title="Redaction Realize" disabled>
+            <span class="icon realizeRedactIcon"></span>
+        </button>
+        <button id="restoreRedact" class="btn btn-default hide" title="Redaction Restore" disabled>
+            <span class="icon restoreRedactIcon"></span>
+        </button>
+        <button id="annotationsProperties" class="btn btn-default hide" title="Annotations Properties">
+            <span class="icon propertiesIcon"></span>
+        </button>
+        <button id="objectsAlignmentOptions" class="btn btn-default hide" title="Objects Alignment Options">
+            <span class="icon objectsAlignmentOptionsIcon"></span>
+        </button>
+        <button id="burnAnnotations" class="btn btn-default hide" title="Burn Annotations">
+            <span class="icon butnAnnotationIcon"></span>
+        </button>
+        <button id="runUserMode" class="btn btn-default hide" title="User Mode : Run">
+            <span class="icon runModeIcon"></span>
+        </button>
+        <button id="designUserMode" class="btn btn-default hide" title="User Mode : Design">
+            <span class="icon designModeIcon"></span>
+        </button>
+        <button id="about" class="btn btn-default hide" title="About">
+            <span class="icon  helpIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Line" value="-2">
+            <span class="icon lineIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Rectangle" value="-3">
+            <span class="icon rectangleIcon"></span>
+        </button>
+
+    </div>
+    @*<div class="toolbar headerToolbarDiv">
+            <label class="btn btn-file">
+                <input id="file" type="file" onchange="UploadFile()" style="display: none;">
+                <span class="icon openIcon"></span>
+            </label>
+            <button id="DeletePage" class="btn btn-default " title="Delete Page">
+                <span class="icon closeIcon"></span>
+            </button>
+            <button id="saveImage" class="btn btn-default hide" title="Save Image">
+                <span class="icon saveIcon"></span>
+            </button>
+            <button id="loadAnnotations" class="btn btn-default hide" title="Load Annotations">
+                <span class="icon openAnnotationIcon"></span>
+            </button>
+            <button id="saveAnnotations" class="btn btn-default" title="Save Annotations">
+                <span class="icon saveXMLIcon"></span>
+            </button>
+            <!-- Size mode : fit -->
+            <button id="fit" class="btn btn-default" title="Fit">
+                <span class="icon  fitIcon"></span>
+            </button>
+            <!-- Size mode : actual size -->
+            <button id="actualSize" class="btn btn-default" title="Actual Size">
+                <span class="icon  actualSizeIcon"></span>
+            </button>
+            <!-- Zoom in -->
+            <button id="zoomIn" class="btn btn-default" title="zoom In">
+                <span class="icon  zoomInIcon"></span>
+            </button>
+            <!-- Zoom out -->
+            <button id="zoomOut" class="btn btn-default" title="Zoom Out">
+                <span class="icon  zoomOutIcon"></span>
+            </button>
+            <button id="loadBatesStamp" class="btn btn-default hide" title="Load Bates Stamp">
+                <span class="icon loadBatesStampIcon"></span>
+            </button>
+            <button id="undo" class="btn btn-default hide" title="Undo">
+                <span class="icon undoIcon"></span>
+            </button>
+            <button id="redo" class="btn btn-default hide" title="Redo">
+                <span class="icon redoIcon"></span>
+            </button>
+            <button id="deleteAnnotation" class="btn btn-default hide" title="Delete Annotation">
+                <span class="icon closeIcon"></span>
+            </button>
+            <button id="duplicate" class="btn btn-default hide" title="Duplicate">
+                <span class="icon duplicateIcon"></span>
+            </button>
+            <button id="lockObject" class="btn btn-default hide" title="Lock Object">
+                <span class="icon lockIcon"></span>
+            </button>
+            <button id="unlockObject" class="btn btn-default hide" title="Unlock Object">
+                <span class="icon unlockIcon"></span>
+            </button>
+            <button id="applyEncryptor" class="btn btn-default hide" title="Apply Encryptor" disabled>
+                <span class="icon applyEncryptorIcon"></span>
+            </button>
+            <button id="applyDecryptor" class="btn btn-default hide" title="Apply Decryptor" disabled>
+                <span class="icon applyDecryptorIcon"></span>
+            </button>
+            <button id="realizeRedact" class="btn btn-default hide" title="Redaction Realize" disabled>
+                <span class="icon realizeRedactIcon"></span>
+            </button>
+            <button id="restoreRedact" class="btn btn-default hide" title="Redaction Restore" disabled>
+                <span class="icon restoreRedactIcon"></span>
+            </button>
+            <button id="annotationsProperties" class="btn btn-default hide" title="Annotations Properties">
+                <span class="icon propertiesIcon"></span>
+            </button>
+            <button id="objectsAlignmentOptions" class="btn btn-default hide" title="Objects Alignment Options">
+                <span class="icon objectsAlignmentOptionsIcon"></span>
+            </button>
+            <button id="burnAnnotations" class="btn btn-default hide" title="Burn Annotations">
+                <span class="icon butnAnnotationIcon"></span>
+            </button>
+            <button id="runUserMode" class="btn btn-default hide" title="User Mode : Run">
+                <span class="icon runModeIcon"></span>
+            </button>
+            <button id="designUserMode" class="btn btn-default hide" title="User Mode : Design">
+                <span class="icon designModeIcon"></span>
+            </button>
+            <button id="about" class="btn btn-default hide" title="About">
+                <span class="icon  helpIcon"></span>
+            </button>
+            <button class="annotationObjectBtn btn btn-default checked" title="Select" value="-1">
+                <span class="icon selectIcon"></span>
+            </button>
+            <button class="annotationObjectBtn btn btn-default hide" title="Line" value="-2">
+                <span class="icon lineIcon"></span>
+            </button>
+            <button class="annotationObjectBtn btn btn-default hide" title="Rectangle" value="-3">
+                <span class="icon rectangleIcon"></span>
+            </button>
+            <!-- start added by ankit bhanderi-->
+            <button class="annotationObjectBtn btn btn-default" title="Rectangle" value="-51">
+                <span class="icon rectangleIcon"></span>
+            </button>
+            <button class="annotationObjectBtn btn btn-default" title="OMR" value="-50">
+                <span class="icon ellipseIcon"></span>
+            </button>
+        </div>*@
+    <div id="workspace">
+        <div class="sidebar-left">
+            <div class="sidebarContainer">
+                <div class="sidebarContentDiv-left">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#thumbnailsDiv" data-toggle="tab">Pages</a></li>
+                        <li id="fieldmappingli"><a href="#fieldmappingDiv" data-toggle="tab">Fields</a></li>
+                    </ul>
+                    <div class="tab-content panelTab">
+                        <div class="tab-pane active" id="thumbnailsDiv"></div>
+                        <div class="tab-pane" id="fieldmappingDiv"></div>
+                    </div>
+                    <div>
+                        <div style="background: darkgray;width: 100%;white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;" class="alert dvFormName" role="alert" title="@ViewBag.Value"><b>Master Form Name:</b> @ViewBag.Value</div>
+                    </div>
+                </div>
+                <div class="sidebarCollapseBtnDiv-right">
+                    <button id="sidebarCollapseBtn-left" class="btn btn-default"></button>
+                </div>
+            </div>
+        </div>
+        <div id="imageViewerContainer">
+            <!-- The viewer will be dynamically created inside imageViewerDiv -->
+            <div id="imageViewerDiv">
+            </div>
+        </div>
+    </div>
+    <!-- Create thumbnails sidebar -->
+    <div class="toolbar footerToolbarDiv">
+        <button id="panZoom" class="interactiveModesBtns btn btn-default hide" title="Pan/Zoom" value="0">
+            <span class="icon  panZoomIcon"></span>
+        </button>
+        <!--end added by ankit bhanderi-->
+        <button class="annotationObjectBtn btn btn-default hide" title="Ellipse" value="-4">
+            <span class="icon ellipseIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Polyline" value="-5">
+            <span class="icon polylineIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Polygon" value="-6">
+            <span class="icon polygonIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Curve" value="-7">
+            <span class="icon curveIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Closed Curve" value="-8">
+            <span class="icon closedCurveIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Pointer" value="-9">
+            <span class="icon pointerIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Freehand" value="-10">
+            <span class="icon freehandIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Hilite" value="-11">
+            <span class="icon hiliteIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Text" value="-12">
+            <span class="icon textIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Text Rollup" value="-13">
+            <span class="icon textRollupIcon "></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Text Pointer" value="-14">
+            <span class="icon textPointerIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Note" value="-15">
+            <span class="icon noteIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Stamp" value="-16">
+            <span class="icon stampIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Rubber Stamp" value="-17">
+            <span class="icon rubberStampIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Hotspot" value="-18">
+            <span class="icon hotspotIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Freehand Hotspot" value="-19">
+            <span class="icon freehandHotspotIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Point" value="-21">
+            <span class="icon pointIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Ruler" value="-23">
+            <span class="icon rulerIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Poly Ruler" value="-24">
+            <span class="icon polyRulerIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Protractor" value="-25">
+            <span class="icon protractorIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Cross Product" value="-26">
+            <span class="icon crossProductIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Redaction" value="-22">
+            <span class="icon redactionIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Encrypt" value="-27">
+            <span class="icon lockIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Audio" value="-28">
+            <span class="icon audioIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Video" value="-30">
+            <span class="icon videoIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Triangle" value="-99">
+            <span class="icon triangleIcon"></span>
+        </button>
+        <button id="documentAnnotations" class="btn btn-default hide" title="Document Pack Dialog">
+            <span class="icon documentAnnotationsIcon"></span>
+        </button>
+        <button id="medicalAnnotations" class="btn btn-default hide" title="Medical Pack Dialog">
+            <span class="icon medicalAnnotationIcon"></span>
+        </button>
+        <button class="annotationObjectBtn btn btn-default hide" title="Rich Text" value="-200">
+            <span class="icon richTextIcon"></span>
+        </button>
+    </div>
+    <!--                                          -->
+    <!--                 Dialogs                  -->
+    <!--                                          -->
+    <!-- About dialog -->
+    <div id="aboutDialog" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog about-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br />
+                    <label id="demoName"></label>
+                    <label>Copyright © 1991-2016 All Rights Reserved.</label>
+                    <label>LEAD Technologies, Inc.</label>
+                    <br />
+                    <img src="@Url.Content("~/Apps/Resources/Images/LEAD.png")" alt="LEADTOOLS" />
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Open Dialog -->
+    <div id="openFileDialog" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    Open File
+                </div>
+                <div class="modal-body">
+                    Image:
+                    <br />
+                    <div class="controls">
+                        <select id="fileSelect" class="form-control">
+                            <option selected="selected">Tiff Image</option>
+                            <option>PDF Document</option>
+                            <option>Gif Image</option>
+                            <option>Enter URL</option>
+                        </select>
+                    </div>
+                    <br />
+                    <div id="urlDiv" style="display:none">
+                        URL
+                        <br />
+                        <div class="input-group">
+                            <input id="fileUrl" type="text" class="form-control" value="http://demo.leadtools.com/images/pdf/leadtools.pdf" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" id="goBtn">GO</button>
+                            </span>
+                        </div>
+                        <br />
+                        <label id="imageUrlHelpLabel"></label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Loading dialog -->
+    <div id="loadingDialog" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog loading-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br />
+                    <img src="@Url.Content("~/Apps/Resources/Images/loading.gif")" />
+                    <br />
+                    <br />
+                    <label id="processText"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Automation update object dialog -->
+    <div id="automationUpdateObjectDialog" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <label>Annotations Properties</label>
+                </div>
+                <div class="modal-body">
+                    <div id="automationUpdateObjectDialog_Body">
+                    </div>
+                    <span id='span_Annotations' class='text-danger'></span>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Automation password dialog -->
+    <div id="automationPasswordDialog" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <label id="passwordDialogName"></label>
+                </div>
+                <div class="modal-body">
+                    <label>Password</label>
+                    <br />
+                    <input id="objectPassword" type="password" class="form-control" placeholder="Password" />
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button id="automationPasswordDlg_OK" class="btn btn-default">OK</button>
+                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Media Player dialog -->
+    <div id="mediaPlayerDialog" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <label id="mediaDialogName"></label>
+                </div>
+                <div class="modal-body">
+                    <label>Media Player</label>
+                    <br />
+                    <video id="videoObject" class="form-control" controls="controls" style="height:100%"></video>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button id="mediaPlayerDlg_OK" class="btn btn-default">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Audio Player dialog -->
+    <div id="audioPlayerDialog" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <label id="audioDialogName"></label>
+                </div>
+                <div class="modal-body">
+                    <label>Audio Player</label>
+                    <br />
+                    <audio id="audioObject" controls style="width:100%;"></audio>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button id="audioPlayerDlg_OK" class="btn btn-default">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Document Pack dialog -->
+    <div id="documentPackDialog" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <label id="documentPackDialogName"></label>
+                </div>
+                <div class="modal-body">
+                    <br />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="documentObjectBtn btn btn-default" title="Text Hilite" value="-33">
+                                <span class="icon textHiliteIcon"></span>
+                                <p>Text Hilite</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="documentObjectBtn btn btn-default" title="Text Strikeout" value="-34">
+                                <span class="icon textStrikeoutIcon"></span>
+                                <p>Text Strikeout</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="documentObjectBtn btn btn-default" title="Text Underline" value="-35">
+                                <span class="icon textUnderlineIcon"></span>
+                                <p>Text Underline</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="documentObjectBtn btn btn-default" title="Text Redaction" value="-36">
+                                <span class="icon textRedactionIcon"></span>
+                                <p>Text Redaction</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="documentObjectBtn btn btn-default" title="Sticky Note" value="-32">
+                                <span class="icon stickyNoteIcon"></span>
+                                <p>Sticky Note</p>
+                            </button>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button id="documentPackDlg_Cancel" class="btn btn-default">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Medical Pack dialog -->
+    <div id="medicalPackDialog" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <label id="medicalPackDialogName"></label>
+                </div>
+                <div class="modal-body">
+                    <br />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class=" medicalObjectBtn btn btn-default" title="Two Parallel Lines" value="-1001">
+                                <span class="icon twoParallelIcon"></span>
+                                <p>Two Parallel Lines</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="medicalObjectBtn btn btn-default" title="Four Parallel Lines" value="-1002">
+                                <span class="icon fourParallelIcon"></span>
+                                <p>Four Parallel Lines</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="medicalObjectBtn btn btn-default" title="Mid Lines" value="-1004">
+                                <span class="icon midLinesIcon"></span>
+                                <p>Mid Lines</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="medicalObjectBtn btn btn-default" title="Snap Line" value="-1005">
+                                <span class="icon snapLinesIcon"></span>
+                                <p>Snap Line</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="medicalObjectBtn btn btn-default" title="Intersection Lines" value="-1006">
+                                <span class="icon intersectionLinesIcon"></span>
+                                <p>Intersection Lines</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="medicalObjectBtn btn btn-default" title="Cobb Angle" value="-1007">
+                                <span class="icon cobbAngleIcon"></span>
+                                <p>Cobb Angle</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="medicalObjectBtn btn btn-default" title="Norberg" value="-1008">
+                                <span class="icon norbergIcon"></span>
+                                <p>Norberg</p>
+                            </button>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button id="medicalPackDlg_Cancel" class="btn btn-default">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Rich Text Editor dialog -->
+    <div id="richTextEditorDialog" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <label>Rich Text Editor</label>
+                </div>
+                <div class="modal-body">
+                    <textarea id="richTextEditor" class="modal-body"></textarea>
+                    <script>
+                        if (lt.LTHelper.device === lt.LTDevice.mobile || lt.LTHelper.device === lt.LTDevice.tablet) {
+                            $('#richTextEditor').jqte({ title: false });
+                        }
+                        else {
+                            $('#richTextEditor').jqte();
+                        }
+                    </script>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Snap To Grid Properties dialog -->
+    <div id="snapToGridPropertiesDialog" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <label id="snapToGridPropertiesDialogName"></label>
+                </div>
+                <div class="modal-body">
+                    <br />
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <label class="checkbox-inline"><input id="snapToGridPropertiesShowGridInput" type="checkbox" value="">Show Grid</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="_gridColorSelect" class="col-sm-2 control-label">Grid Color</label>
+                            <div class="col-sm-10">
+                                <select id="snapToGridPropertiesGridColorSelect" class="form-control">
+                                    <option value="Black">Black</option>
+                                    <option value="Blue">Blue</option>
+                                    <option value="Gray">Gray</option>
+                                    <option value="Green">Green</option>
+                                    <option value="Red">Red</option>
+                                    <option value="White">White</option>
+                                    <option value="Yellow">Yellow</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="_lineStyleSelect" class="col-sm-2 control-label">Line Style</label>
+                            <div class="col-sm-10">
+                                <select id="snapToGridPropertiesLineStyleSelect" class="form-control">
+                                    <option value="Solid">Solid</option>
+                                    <option value="Dash">Dash</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-offset-2 col-xs-4">
+                                <h6>Grid Length(5-999)</h6>
+                                <input class="form-control" id="snapToGridPropertiesGridLengthInput" type="number" min="5" max="999">
+                            </div>
+                            <div class="col-xs-offset-2 col-xs-4">
+                                <h6>Line Spacing(1-1000)</h6>
+                                <input class="form-control" id="snapToGridPropertiesLineSpacingInput" type="number" min="1" max="1000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Behavior:</label>
+                            <br />
+                            <div class="col-sm-10">
+                                <label class="checkbox-inline"><input id="snapToGridPropertiesEnableSnapInput" type="checkbox" value="">Enable Snap</label>
+                            </div>
+                        </div>
+                    </form>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button id="snapToGridPropertiesOkBtn" class="btn btn-default">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Objects Alignment Options -->
+    <div id="objectsAlignmentDialog" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <label id="objectsAlignmentDialogName"></label>
+                </div>
+                <div class="modal-body">
+                    <br />
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <label class="checkbox-inline">
+                                <input id="objectsAlignmentDialogEnableCheckBox" type="checkbox" value="">Enable Objects Alignment
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="objectsAlignmentBtn btn btn-default" title="Align To Left" value="-1">
+                                <span class="icon alignToLeft"></span>
+                                <p>Align To Left</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="objectsAlignmentBtn btn btn-default" title="Align To Center" value="-2">
+                                <span class="icon alignToCenter"></span>
+                                <p>Align To Center</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="objectsAlignmentBtn btn btn-default" title="Align To Right" value="-3">
+                                <span class="icon alignToRight"></span>
+                                <p>Align To Right</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="objectsAlignmentBtn btn btn-default" title="Align To Top" value="-4">
+                                <span class="icon alignToTop"></span>
+                                <p>Align To Top</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="objectsAlignmentBtn btn btn-default" title="Align To Middle" value="-5">
+                                <span class="icon alignToMiddle"></span>
+                                <p>Align To Middle</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="objectsAlignmentBtn btn btn-default" title="Align To Bottom" value="-6">
+                                <span class="icon alignToBottom"></span>
+                                <p>Align To Bottom</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="objectsAlignmentBtn btn btn-default" title="Make Same Width" value="-7">
+                                <span class="icon makeSameWidth"></span>
+                                <p>Make Same Width</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="objectsAlignmentBtn btn btn-default" title="Make Same Height" value="-8">
+                                <span class="icon makeSameHeight"></span>
+                                <p>Make Same Height</p>
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="objectsAlignmentBtn btn btn-default" title="Make Same Size" value="-9">
+                                <span class="icon makeSameSize"></span>
+                                <p>Make Same Size</p>
+                            </button>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button id="objectsAlignmentDialogOkBtn" class="btn btn-default">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="notifications"></div>
+    <script type="text/javascript">
+        //$(function () {
+        //    $("#workspace").splitter({
+        //        "orientation": "horizontal",
+        //        limit: 200,
+        //        "paneResized": paneResized
+        //    });
+        //});
+        //function paneResized() {
+        //    $(".splitter-resizebar").trigger("onImageViewerResize");
+        //}
+
+        function UploadFile(isAnyChangeInAnnotation) {
+            try {
+                var data = new FormData();
+                var files = $("#file").get(0).files;
+                if (files.length > 0) {
+                    data.append("UploadedFile", files[0]);
+                    $('#spfile').text("");
+                    var ext = $('#file').val().split('.').pop().toLowerCase();
+                    if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg', 'tif', 'pdf']) == -1) {
+                        Notify("Invalid file!", null, null, 'danger');
+                        $("#file").val(null);
+                        return;
+                    }
+                }
+                else {
+                    Notify("Please choose file", null, null, 'danger');
+                    return;
+                }
+                $("#processText").html("Uploading page...");
+                $("#loadingDialog").modal();
+                var path = $('#BaseUrl').val() + '/api/MasterFormApi/UploadFile';
+                $.ajax({
+                    type: 'POST',
+                    url: path,
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: function (data, textStatus, jqXHR) {
+                        try {
+                            if (textStatus == "success") {
+                                var fileName = jqXHR["statusText"];
+                                var fileKey = $('#hdnKey').val();
+                                var friendlyName = $('#hdnfriendlyName').val();
+                                CreateFiles(fileName, fileKey, friendlyName);
+                            }
+                        } catch (e) {
+                            console.log("Error" + e.message);
+                        }
+                    }, error: function () {
+                    }
+                });
+            }
+            catch (e) {
+                console.log("Error" + e.message);
+            }
+        }
+        function CreateFiles(fileName, folderName, friendlyName) {
+            var path = $('#BaseUrl').val() + '/api/GenerateFile/CreateFiles';
+            $.ajax({
+                type: 'POST',
+                url: path,
+                processData: false,
+                data: 'FileName=' + fileName
+                    + '&FolderName=' + folderName
+                    + "&FriendlyName=" + friendlyName,
+                success: function (data, textStatus, jqXHR) {
+                    if (data && data.indexOf("successfully") > 0) {
+                        Notify("Page added to master form set successfully", null, null, 'success');
+                        window.location.reload();
+                    }
+                }
+            });
+        }
+        //function back() {
+        //    window.location.href = "../../Masterform/index";
+        //}
+    </script>
+
+</body>
+</html>
