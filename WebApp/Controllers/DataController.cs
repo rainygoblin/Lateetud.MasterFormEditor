@@ -141,7 +141,7 @@ namespace Leadtools.JSDemos.Controllers
                 //if (string.IsNullOrEmpty(Data))
                 if (data == null)
                     throw new ArgumentNullException("data");
-                 
+
                 // get an element from the string
                 var element = data;
                 string filePath = "";
@@ -177,7 +177,7 @@ namespace Leadtools.JSDemos.Controllers
                         ServiceHelper.SetLicense();
                         workingRepository = new DiskMasterFormsRepository(_codecs, workingDirectory);
                         var masterForm = workingRepository?.RootCategory?.MasterForms?.FirstOrDefault();
-                        
+
 
                         if (masterForm != null)
                         {
@@ -186,16 +186,64 @@ namespace Leadtools.JSDemos.Controllers
                         }
                     }
                 }
-                
+                string DirPath = GetEnvironmentVariable("SMART");
+                var targetDocInput = Path.Combine(DirPath, "OCRMasterFormSets");
+                CopyDirectory(workingDirectory, targetDocInput, strPhysicalFolderName);// copy the workingDirectory to SMART folder
+
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return false;
             }
         }
-        
+        private static string GetEnvironmentVariable(string latFormHome)
+        {
+            if (latFormHome == null)
+            {
+                return null;
+            }
+
+            var value = Environment.GetEnvironmentVariable(latFormHome);
+
+            return value;
+        }
+        private static void CopyDirectory(string sourcePath, string destPath, string folderName)
+        {
+            string strTargetFolder = Path.Combine(destPath, folderName);
+            if (!Directory.Exists(destPath))
+            {
+                Directory.CreateDirectory(destPath);
+            }
+            if (!Directory.Exists(strTargetFolder))
+            {
+                Directory.CreateDirectory(strTargetFolder);
+            }
+            else
+            {
+                foreach (string file in Directory.GetFiles(strTargetFolder))
+                {
+
+                    try { File.Delete(file); }
+                    catch { }
+                }
+            }
+
+
+            foreach (string file in Directory.GetFiles(sourcePath))
+            {
+               
+                string dest = Path.Combine(strTargetFolder, Path.GetFileName(file)); //Path.Combine(destPath, Path.GetFileName(file));
+                File.Copy(file, dest);
+            }
+
+            foreach (string folder in Directory.GetDirectories(sourcePath))
+            {
+                string dest = Path.Combine(destPath, Path.GetFileName(folder));
+                CopyDirectory(folder, dest, folderName);
+            }
+        }
         private bool AddField(DiskMasterForm currentform, List<XmlModel> model)
         {
             try
@@ -248,7 +296,7 @@ namespace Leadtools.JSDemos.Controllers
                                 (newField as OmrFormField).Sensitivity = OcrOmrSensitivity.Highest;
                         }
                         newField.Name = xmlDetail.FieldInfo.Name;
-                        newField.Bounds = new LeadRect(Convert.ToInt32(Annotations.Engine.AnnUnitConverter.ConvertToPixels(xmlDetail.Cordinates.X,Leadtools.Annotations.Engine.AnnUnit.Unit, 96)),Convert.ToInt32(Annotations.Engine.AnnUnitConverter.ConvertToPixels(xmlDetail.Cordinates.Y, Annotations.Engine.AnnUnit.Unit, 96)),Convert.ToInt32(Annotations.Engine.AnnUnitConverter.ConvertToPixels(xmlDetail.Cordinates.Width, Annotations.Engine.AnnUnit.Unit, 96)),Convert.ToInt32(Annotations.Engine.AnnUnitConverter.ConvertToPixels(xmlDetail.Cordinates.Height, Annotations.Engine.AnnUnit.Unit, 96)));
+                        newField.Bounds = new LeadRect(Convert.ToInt32(Annotations.Engine.AnnUnitConverter.ConvertToPixels(xmlDetail.Cordinates.X, Leadtools.Annotations.Engine.AnnUnit.Unit, 96)), Convert.ToInt32(Annotations.Engine.AnnUnitConverter.ConvertToPixels(xmlDetail.Cordinates.Y, Annotations.Engine.AnnUnit.Unit, 96)), Convert.ToInt32(Annotations.Engine.AnnUnitConverter.ConvertToPixels(xmlDetail.Cordinates.Width, Annotations.Engine.AnnUnit.Unit, 96)), Convert.ToInt32(Annotations.Engine.AnnUnitConverter.ConvertToPixels(xmlDetail.Cordinates.Height, Annotations.Engine.AnnUnit.Unit, 96)));
                         // newField.Bounds= new LogicalRectangle(AnnUnitConverter.ConvertToPixels(xmlDetail.Cordinates.X, AnnUnit.Unit, 96), AnnUnitConverter.ConvertToPixels(xmlDetail.Cordinates.Y, AnnUnit.Unit, 96), AnnUnitConverter.ConvertToPixels(xmlDetail.Cordinates.Width, AnnUnit.Unit, 96), AnnUnitConverter.ConvertToPixels(xmlDetail.Cordinates.Height, AnnUnit.Unit, 96), LogicalUnit.Pixel);
 
                         Annotations.Engine.AnnHiliteObject newObject = new Annotations.Engine.AnnHiliteObject();
